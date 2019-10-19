@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="assets/styles/app.css" rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet">
+
+</head>
+<body>
+<!-- Initial Popup will display promotion and count down clock -->
+<section class="modal" id="initial_popup">-
+    <figure>
+        <span class="close"><i class="far fa-times-circle"></i></span>
+        <h1>Pair Event</h1>
+        <section>Count down clock</section>
+
+        <!--<div class="countdown"></div>-->
+    </figure>
+</section>
+
+
+<!-- Tech page Modal -->
+<section class="modal" id="tech_info_modal">-
+    <figure>
+        <span class="close"><i class="far fa-times-circle"></i></span>
+        <h1>5G The Future Connection</h1>
+        <section>Count down clock</section>
+    </figure>
+</section>
+<!-- Contact Modal -->
+<section class="modal" id="contact_modal">-
+    <figure>
+        <span class="close"><i class="far fa-times-circle"></i></span>
+        <h1>Contact & Locator Page</h1>
+        <section>Count down clock</section>
+        <h1>We're here</h1>
+
+    </figure>
+</section>
+<!-- Basket Modal -->
+<section class="modal" id="basket_modal">-
+    <figure>
+        <span class="close"><i class="far fa-times-circle"></i></span>
+        <h1>Pair Event</h1>
+        <section>Count down clock</section>
+    </figure>
+</section>
+<header>
+    <nav>
+        <div>
+            <img src="https://via.placeholder.com/150x60?text=Pair+Event+Placeholder" alt="Event logo image">
+        </div>
+        <div>
+            <a href="#" target="_self" hreflang="en" class="opener" title="Move to the contact and locator page"
+               data-modal-type="contact_modal">Contact Us!</a>
+        </div>
+        <div>
+            <a href="#" target="_self" hreflang="en" title="Open the order form to make a purchase"><i
+                    class="fas fa-shopping-basket opener" data-modal-type="basket_modal"></i></a>
+        </div>
+    </nav>
+</header>
+<main>
+    <section id="video_window">
+        <video autoplay loop muted poster="assets/media/video_placeholder.png">
+            <source src="assets/media/headervideo.mp4" type="video/mp4">
+            This video is not compatible with your browser
+        </video>
+
+        <div id="video_cover"></div>
+        <div id="event_title">
+            <h1>Pair Events Presents:-<br> &emsp; &emsp;<small>5G The Future Connection</small></h1>
+        </div>
+        <div id="top_links">
+            <a id="tech_info_modal_opener" href="#tech_info_modal" target="_self"><span class="top_title"><i
+                    class="far fa-square"></i>&nbsp;LEARN THE<br>TECH</span></a>
+            <br>
+            <a id="meet_the_experts_opener" href="#experts" target="_self"><span class="top_title"><i
+                    class="far fa-square"></i>&nbsp;MEET THE  <br>EXPERTS</span></a>
+        </div>
+        <div class="countdown"></div>
+        <div id="social_links">
+            <a title="Connect on Facebook"><span><i class="fab fa-facebook-f"></i></span></a>
+            <a title="Connect on LinkedIn"><span><i class="fab fa-linkedin-in"></i></span></a>
+            <a title="Connect on Pinterest"> <span><i class="fab fa-pinterest-p"></i></span></a>
+            <a title="Connect on Instagram"> <span><i class="fab fa-instagram"></i></span></a>
+            <a title="Connect on SlideShare"><span><i class="fab fa-slideshare"></i></span></a>
+            <a title="Connect on Twitter"><span><i class="fab fa-twitter"></i></span></a>
+        </div>
+        <section id="attendance_bar">
+            <figure title="Number of speaks to talk at the event"><span class="attendance_counter">3</span><br><i
+                    class="fas fa-microphone"></i><br>Speakers
+            </figure>
+            <figure title="Total number of booths promoting their tech"><span class="attendance_counter">70</span><br><i
+                    class="fas fa-compress-arrows-alt"></i><br>Exhibitors
+            </figure>
+            <figure title="Total number of coding stations for live demos and tech collaboration"><span
+                    class="attendance_counter">12</span><br><i class="fas fa-laptop-code"></i><br>Codtations
+            </figure>
+        </section>
+
+
+    </section>
+
+
+    <section id="dont_miss">
+        <div>
+            <figure>
+                <button class="button">Why Attend?</button>
+            </figure>
+            <figure>
+                <small>Get notified of event updates</small>
+                <form id="notified">
+                    <input placeholder="Provide your email address" required type="email" id="get_notified_address">
+                    <button id="get_notified" class="button">Join List</button>
+                </form>
+            </figure>
+            <figure>
+                <button class="button">How To Attend</button>
+            </figure>
+        </div>
+
+    </section>
+    <section id="experts">
+        <figure>
+            <img src="assets/media/person-placeholder-male-5.jpg" alt="This is a picture of event speaker Rowan Hogman">
+            <figcaption>Rowan Hogman</figcaption>
+        </figure>
+        <figure>
+            <img src="assets/media/person-placeholder-male-5.jpg" alt="This is a picture of event speaker Rowan Hogman">
+            <figcaption>Darren King</figcaption>
+        </figure>
+        <figure>
+            <img src="assets/media/person-placeholder-male-5.jpg" alt="This is a picture of event speaker Rowan Hogman">
+            <figcaption>Professor Karen Cham</figcaption>
+        </figure>
+
+    </section>
+    <section id="sponsors">
+        <img class="sponsor_logo logo_top" src="assets/media/brands/bt.png" title="Sponsor logo of British Telecom"
+             alt="Sponsor logo of British Telecom">
+        <img class="sponsor_logo logo_bottom" src="assets/media/brands/cisco.png" title="Sponsor logo of Cisco"
+             alt="Sponsor logo of Cisco">
+        <img class="sponsor_logo logo_top" src="assets/media/brands/vodafone-png-file-vodafone-2003-2007-png-2000.png"
+             title="Sponsor logo of Vodafone" alt="Sponsor logo of Vodafone">
+        <img class="sponsor_logo logo_bottom" src="assets/media/brands/huawei.png" title="Sponsor logo of Huawei"
+             alt="Sponsor logo of Huawei">
+        <img class="sponsor_logo logo_top" src="assets/media/brands/colab-slack-channel.png"
+             title="Sponsor logo of Slack" alt="Sponsor logo of Slack">
+        <img class="sponsor_logo logo_bottom" src="assets/media/brands/ibm_PNG19650.png" alt="Sponsor logo of IBM">
+        <img class="sponsor_logo logo_top" src="assets/media/brands/intel.png" alt="Sponsor logo of Intel">
+        <img class="sponsor_logo logo_bottom" src="assets/media/brands/hitachi-png-gallery-of-hitachi-logo-png-2728.png"
+             alt="Sponsor logo of Hitachi">
+    </section>
+</main>
+<footer>
+    <figure>
+        <span>Get Involved</span>
+        <ul>
+            <li><a href="#" target="_self"><span>Become an Exhibitor</span></a></li>
+            <li><a href="#" target="_self"><span>Become a Speaker</span></a></li>
+        </ul>
+    </figure>
+    <figure>
+        <span>Don't Miss Out</span>
+        <ul>
+            <li><a href="#" target="_self"><span>Email Reminders</span></a></li>
+            <li><a href="#" target="_self"><span>Order a Ticket</span></a></li>
+
+        </ul>
+    </figure>
+    <figure>
+        <span>Information</span>
+        <ul>
+            <li><a href="#" target="_self"><span>T&S</span></a></li>
+            <li><a href="#" target="_self"><span>Privacy & Cookies</span></a></li>
+        </ul>
+    </figure>
+    <figure>
+        <span>Location</span>
+        <ul>
+            <li>Waterfront Hall</li>
+            <li>2 Lanyon Pl</li>
+            <li>Belfast</li>
+            <li>Northern Ireland</li>
+            <li>United Kingdom</li>
+            <li>BT1 3WH</li>
+        </ul>
+    </figure>
+</footer>
+
+<script src="assets/js/app.js" type="application/javascript"></script>
+</body>
+</html>
+
