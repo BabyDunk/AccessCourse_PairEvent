@@ -1,7 +1,6 @@
 Pair_Event = {
 	store: (key, data) => {
 		if (typeof (Storage) !== "undefined") {
-			console.log('Is here')
 			return localStorage.setItem(key, data)
 		} else {
 			console.log('Storage not available')
@@ -48,34 +47,33 @@ Pair_Event = {
 		}
 	},
 	digitCounterClimber: (el) => {
-	
-		let number = el.innerText;
-		let numberSec = 3;
-		let counterSegments = number/numberSec;
-		let timer = ((numberSec*1000)/number); // Time in milliseconds
+		let number = parseInt(el.dataset.totalAttendees);
+		let numberSec = 1;
+		let timer = (numberSec * 1000);
+		let timerParts = (timer / number); // Time in milliseconds
 		let climber = 0;
-		let secClimber = 1;
+		let secClimber = 0;
 		
-		if(isNaN(number)){
+		if (isNaN(number)) {
 			console.log('Counter is not a number');
 			return ''
-		}else{
+		} else {
 			
-			let climberInterval = setInterval(()=>{
-				secClimber += timer
-				climber += counterSegments
+			let climberInterval = setInterval(() => {
 				
-				console.log(climber)
+				secClimber += timerParts;
+				climber++;
 				
-				if(timer>=3000){
+				if (secClimber >= timer) {
 					clearInterval(climberInterval)
 				}
+				el.innerText = climber;
 				
-			}, (secClimber))
+			}, (timerParts))
 			
 		}
 		
-	
+		
 	}
 };
 
@@ -198,7 +196,7 @@ Pair_Event = {
 	'use strict';
 	
 	let sponsors = document.getElementById('sponsors');
-	let scrollItems = sponsors.children
+	let scrollItems = sponsors.children;
 	let elArray = [];
 	for (let x = 0; x < scrollItems.length; x++) {
 		elArray.push(scrollItems[x])
@@ -224,7 +222,7 @@ Pair_Event = {
 	let getNotifiedAddress = document.getElementById('get_notified_address');
 	
 	getNotified.addEventListener('click', (evt) => {
-		evt.preventDefault()
+		evt.preventDefault();
 		
 		let emailValidation = getNotifiedAddress.value;
 		if (emailValidation === '') {
@@ -240,10 +238,11 @@ Pair_Event = {
 	
 	'use strict';
 	
-	let counterEl = document.querySelectorAll('.attendance_counter')
+	let counterEl = document.querySelectorAll('.attendance_counter');
 	
+	//Pair_Event.digitCounterClimber(counterEl[2])
 	for(let x=0; x<counterEl.length; x++){
-		Pair_Event.digitCounterClimber(counterEl[x])
-	}
+	 Pair_Event.digitCounterClimber(counterEl[x])
+	 }
 	
 })();
