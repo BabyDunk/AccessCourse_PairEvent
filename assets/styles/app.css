@@ -1,12 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=Bowlby+One+SC|Oswald&display=swap');
+
 /* Variables */
 :root {
-    --header-footer-color: #444444;
+    --header-footer-color1: 68, 68, 68;
+    --header-footer-color2: 85, 85, 85;
 }
 
 /* Variables */
 body{
     background-color: #F5F5F5;
+    margin: 0;
+    padding: 0;
+
 }
+
+.title{
+    font-family: Oswald
+}
+
 header {
     position: fixed;
     top: 0;
@@ -14,7 +25,8 @@ header {
     left: 0;
     padding: 0;
     margin: 0;
-    z-index: 31
+    z-index: 31;
+    box-shadow: 1px 1px 7px rgba(68, 68, 68, 0.9);
 }
 
 nav {
@@ -22,8 +34,9 @@ nav {
     grid-template-columns: 6fr 2fr 1fr;
     justify-content: right;
     align-items: center;
-    background-color: var(--header-footer-color);
-    border: 2px solid #fff;
+    background: linear-gradient(0deg, rgb(var(--header-footer-color1)), rgb(var(--header-footer-color2)), rgb(var(--header-footer-color2)), rgb(var(--header-footer-color2)), rgb(var(--header-footer-color1)) );
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
 }
 
 nav div {
@@ -32,6 +45,7 @@ nav div {
     font-size: 2em;
     color: #7c7c7c;
     text-align: center;
+    transition: all 1s;
 }
 
 nav div a {
@@ -47,10 +61,31 @@ nav div a:hover{
     color:orange;
 }
 
-.fa-shopping-basket {
+.slim_line_nav{
+    transition: transform 2s;
+}
 
+.slim_line_nav nav {
 
 }
+.slim_line_nav nav div {
+    padding: 0.1em;
+    font-size: 1em;
+    margin: 3px;
+    transition: all 1s;
+
+}
+
+.slim_line_nav nav div a img {
+    height:40px;
+    width: auto;
+    animation: spin 4s linear ;
+    -webkit-animation:spin 4s linear ;
+    -moz-animation:spin 4s linear ;
+}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 
 main {
 
@@ -76,9 +111,9 @@ main {
 .modal figure {
     width: 80vw;
     height: 80vh;
-    background-color: #e3e3e3;
-    border: 2px solid #555;
-    border-radius: 7px;
+    background-color: #fff;
+    border: 2px solid #e5e5e5;
+    padding: 2px;
 }
 
 .modal figure .close {
@@ -95,6 +130,215 @@ main {
     color: orange;
 }
 
+
+#shop_baskets {
+    display: none;
+    background: rgba(0, 0, 0, 0.79);
+    width: 100vw;
+    height: 100vh;
+    grid-template-columns: 1fr;
+    z-index: 9999;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    position: fixed;
+}
+
+#shop_baskets .basket_surround {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+}
+#shop_baskets .basket_surround  .basket_modal {
+    width: 100vw!important;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: center;
+
+}
+
+#shop_baskets .basket_surround  .basket_modal .basket_figure {
+    width: 900px;
+    height: 650px;
+    background-color: #fff;
+    border: 2px solid #e5e5e5;
+    padding: 2px;
+}
+
+#shop_baskets .basket_surround  .basket_modal .basket_figure .h1{
+    text-align: center;
+    font-size: 2em;
+    font-family: Oswald;
+    margin-bottom: 15px;
+    text-decoration: underline;
+}
+
+#shop_baskets .basket_surround .basket_modal .basket_figure .basket_close {
+    float: right;
+    margin: 14px;
+    border: 1px solid transparent;
+    border-radius: 14%;
+    background-color: #fff;
+    font-size: 24px;
+    color: #555;
+}
+
+#shop_baskets .basket_surround .basket_modal .basket_figure .basket_close:hover {
+    color: orange;
+}
+
+
+#cart_pos_counter {
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+}
+
+#cart_pos_counter figure {
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr;
+    align-items: center;
+
+}
+
+#cart_pos_counter figure:first-child span{
+    background-color: #09e319;
+}
+
+#cart_pos_counter figure span:first-child{
+    border: 2px solid #555;
+    border-radius: 100%;
+    padding:10px 30px;
+    font-family: 'Bowlby One SC';
+}
+#cart_pos_counter figure .hyphen{
+    padding:10px 20px;
+    border: solid #555 2px;
+}
+
+#cart_pos_counter figure span{
+    margin:14px;
+    font-size: 3em;
+    background-color: #ff2d38;
+    color: #fff;
+    box-shadow: 1px 1px 2px  rgba(85, 85, 85, 0.82), -1px -1px 2px  rgba(85, 85, 85, 0.82);
+}
+
+#shop_and_basket {
+    display:grid;
+    grid-template-columns: 3fr 2fr;
+    padding: 14px;
+}
+
+#ticket_list {
+    border-right: solid 7px #555;
+
+}
+
+#ticket_list figure {
+    display:grid;
+    grid-template-columns: 1fr 3fr;
+    border-bottom: solid 1px #555;
+    position:relative;
+    margin: 10px 15px;
+}
+
+#ticket_list figure:hover{
+    background-color: #f3f3f3;
+}
+
+#ticket_list figure:last-child{
+    border:none;
+}
+
+#ticket_list figure .add_to_basket{
+    position:absolute;
+    left: 10px;
+    bottom: 7px;
+    color:#555;
+}
+
+#ticket_list figure .add_to_basket:hover {
+    color:orange;
+}
+
+#ticket_list figure .remove_from_basket{
+    position:absolute;
+    left: 50px;
+    bottom: 7px;
+    color:#555;
+}
+
+#ticket_list figure .remove_from_basket:hover {
+    color:red;
+}
+
+#ticket_list figure div{
+    position: relative;
+}
+
+#ticket_list figure div h3{
+    margin-top:0;
+}
+
+#ticket_list figure div .price{
+    position:absolute;
+    right: 7px;
+    top: 14px;
+}
+
+
+#ticket_in_cart_inner{
+    display:grid;
+    grid-template-rows: 3fr 1fr 1fr;
+}
+
+#order_list{
+    overflow:auto;
+    max-height:250px;
+    display:grid;
+    grid-template-columns: 1fr;
+}
+
+#order_list figure{
+    display:grid;
+    grid-template-columns: 1fr;
+    margin:0;
+    max-height:130px
+}
+
+#order_list figure figure div .title{
+    margin-top:0;
+}
+
+#order_list figure figure div select{
+    width: 30px;
+}
+
+#order_list figure figure{
+    display:grid;
+    grid-template-columns: 1fr 3fr;
+    margin:0;
+}
+
+#move_to_pay{
+    justify-self: end;
+
+}
+#move_to_payment{
+    padding: 14px 14px 14px 7px ;
+    border: 1px #555 solid;
+    background-color: #09e319;
+    font-size: 1.2em;
+    box-shadow: 1px 1px 1px #555, -1px -1px 1px  #555;
+}
+
+#move_to_payment:hover{
+    background-color: orange;
+}
 
 #initial_popup figure .countdown .counter {
     display: grid;
@@ -138,7 +382,7 @@ main {
 
 #video_window .countdown {
     position: absolute;
-    bottom: 150px;
+    bottom: 160px;
     left: 10px;
     background-color: transparent;
     z-index: 29
@@ -170,8 +414,7 @@ main {
 }
 
 #event_title h1 {
-    font-size: 4em;
-    font-family: "Century Schoolbook L", sans-serif;
+    font-size: 5em;
 }
 
 #attendance_bar {
@@ -181,7 +424,8 @@ main {
     z-index: 30;
     width: 100vw;
     /* height:100px;*/
-    background-color: #fff;
+    background: linear-gradient(0deg, rgb(var(--header-footer-color1)), rgb(var(--header-footer-color2)), rgb(var(--header-footer-color2)), rgb(var(--header-footer-color1)) );
+    color: #fff;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     border-top: solid 2px #555;
@@ -199,11 +443,12 @@ main {
 
 #attendance_bar figure i {
     font-size: 2em;
+    padding: 14px;
 }
 
 #social_links {
     position: absolute;
-    bottom: 150px;
+    bottom: 180px;
     right: 10px;
     z-index: 30;
     display: grid;
@@ -247,52 +492,7 @@ main {
     font-size: 3em;
 }
 
-footer {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    justify-content: space-between;
-    background-color: var(--header-footer-color);
-}
 
-footer figure {
-    border-right: solid 1px #555;
-    display: grid;
-    grid-template-columns: 1fr;
-    justify-content: center;
-    padding: 15px;
-    align-content: start;
-}
-
-footer figure:last-child {
-    border-right: none;
-}
-
-footer figure span {
-    color: #7c7c7c;
-    font-size: 1.3em;
-}
-
-footer figure ul {
-    list-style-type: none;
-}
-
-footer figure ul li {
-    line-height: 23px;
-    color: #fff;
-}
-
-footer figure ul li a {
-    text-decoration: none;
-    color: #fff;
-}
-
-footer figure ul li a:hover {
-    color: orange;
-}
-
-footer figure ul li a span {
-    color: #fff;
-}
 
 #dont_miss {
     display: flex;
@@ -348,13 +548,15 @@ footer figure ul li a span {
 #experts figure img {
     width: 100%;
     max-width: 200px;
+    box-shadow: 1px 1px 2px rgba(68, 68, 68, 0.9), -1px -1px 2px rgba(68, 68, 68, 0.9);
+
 }
 
 #experts figure figcaption {
 
 }
 
-#sponsors {
+#sponsors section {
     display: grid;
     grid-auto-flow: column;
     height: 300px;
@@ -375,4 +577,73 @@ footer figure ul li a span {
 
 #sponsors img.logo_bottom {
     align-self: end;
+}
+
+.success {
+    font-size: 1.2em;
+    color:white;
+    background-color: green;
+}
+
+#scrollTo {
+    position: fixed;
+    right: 30px;
+    font-size: 3em;
+    color: rgba(113, 113, 113, 0.95);
+    z-index: 31;
+    bottom: 10px;
+}
+
+#scrollTo:hover{
+    color: #7c7c7c;
+}
+
+
+footer {
+    background: linear-gradient(0deg, rgb(var(--header-footer-color1)), rgb(var(--header-footer-color2)), rgb(var(--header-footer-color2)), rgb(var(--header-footer-color2)), rgb(var(--header-footer-color1)) );
+}
+footer section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: space-between;
+}
+
+footer section figure {
+    border-right: solid 1px #111111;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    padding: 15px;
+    align-content: start;
+}
+
+footer section figure:last-child {
+    border-right: none;
+}
+
+footer section figure span {
+    color: #7c7c7c;
+    font-size: 1.3em;
+}
+
+footer section figure ul {
+    list-style-type: none;
+}
+
+footer section figure ul li {
+    line-height: 23px;
+    color: #fff;
+}
+
+footer section figure ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+footer section figure ul li a:hover > span{
+    color: orange;
+}
+
+footer section figure ul li a span {
+    color: #fff;
 }
