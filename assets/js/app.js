@@ -1,3 +1,14 @@
+// TODO: contact page
+// TODO: translator
+// TODO: privacy policy
+// TODO: why attend
+// TODO: tech page
+// TODO: speaker flip cards
+// TODO: move to ajax json once the sale has been completed
+// TODO: include an email mechanism
+// TODO: add Links for the social links
+
+
 const Pair_Event = {
 	storage: {
 		store: (key, data) => {
@@ -395,6 +406,17 @@ const Pair_Event = {
 			return theCarts.pair_event_orders[orderID]
 		},
 		notifier: (toNotify) => {
+			
+			`
+			Notifier Package Template
+			+++++++++++++++++++++++++
+			
+			{
+				target: 'email',
+				message: "Email field can't left empty",
+				isSuccess: false
+			}`;
+			
 			if (!Array.isArray(toNotify)) {
 				toNotify = [toNotify]
 			}
@@ -422,9 +444,38 @@ const Pair_Event = {
 		},
 	},
 	holders: {
-			priceList: () => {
-				// Simulate backend server price verification checks
-				prices = {
+		priceList: () => {
+			// Simulate backend server price verification checks
+			prices = {
+				"1": {
+					"title": "Platinum Package",
+					"description": "Access all areas. whether that's backstage, at the coding booth or simply in the audience. you can talk to any member of the any team or Get your hands dirty in the tech pit what ever you want you got it. meals and drinks will be provided",
+					"price": 350
+				},
+				"2": {
+					"title": "Enthusiast Package",
+					"description": "Access to the team and coding booth, also meet the speakers",
+					"price": 250
+				},
+				"3": {
+					"title": "Developer Package",
+					"description": "Meet the speakers, access to coding booth and opportunities to collaborate",
+					"price": 200
+				},
+				"4": {
+					"title": "Student Package",
+					"description": "Access all areas",
+					"price": 0
+				}
+			};
+			
+			
+			return prices
+		},
+		jsonApi: () => {
+			return {
+				"pair_event_orders": [],
+				"priceCheck": {
 					"1": {
 						"title": "Platinum Package",
 						"description": "Access all areas. whether that's backstage, at the coding booth or simply in the audience. you can talk to any member of the any team or Get your hands dirty in the tech pit what ever you want you got it. meals and drinks will be provided",
@@ -445,52 +496,22 @@ const Pair_Event = {
 						"description": "Access all areas",
 						"price": 0
 					}
-				};
+				},
+				"shopOpened": "2019-11-07 00:00:00",
 				
 				
-				return prices
-			},
-			jsonApi: () => {
-				return {
-					"pair_event_orders": [],
-					"priceCheck": {
-						"1": {
-							"title": "Platinum Package",
-							"description": "Access all areas. whether that's backstage, at the coding booth or simply in the audience. you can talk to any member of the any team or Get your hands dirty in the tech pit what ever you want you got it. meals and drinks will be provided",
-							"price": 350
-						},
-						"2": {
-							"title": "Enthusiast Package",
-							"description": "Access to the team and coding booth, also meet the speakers",
-							"price": 250
-						},
-						"3": {
-							"title": "Developer Package",
-							"description": "Meet the speakers, access to coding booth and opportunities to collaborate",
-							"price": 200
-						},
-						"4": {
-							"title": "Student Package",
-							"description": "Access all areas",
-							"price": 0
-						}
-					},
-					"shopOpened": "2019-11-07 00:00:00",
-					
-					
-				}
-			},
-			jsonApiURL: 'https://api.myjson.com/bins',
-			orderList: (orderJson = '') => {
-				
-				this.orders = (orderJson !== '') ? orderJson : this.orders;
-				
-				return this.orders
 			}
+		},
+		jsonApiURL: 'https://api.myjson.com/bins',
+		orderList: (orderJson = '') => {
 			
+			this.orders = (orderJson !== '') ? orderJson : this.orders;
+			
+			return this.orders
 		}
 		
-		
+	}
+	
 	
 };
 
@@ -526,7 +547,7 @@ const Pair_Event = {
 	
 	'use strict';
 	
-	//Pair_Event.storage.remove('initial_popup');
+	Pair_Event.storage.remove('initial_popup');
 	if (Boolean(Pair_Event.storage.get('initial_popup')) !== true) {
 		setTimeout(() => {
 			document.getElementById('initial_popup').style.display = 'grid';
@@ -614,53 +635,57 @@ const Pair_Event = {
 	
 	'use strict';
 	
-	let open_Cart = document.querySelector('.basket_opener');
+	let open_Cart = document.querySelectorAll('.basket_opener');
 	
-	open_Cart.addEventListener('click', (evt) => {
-		//Pair_Event.ajax.put(Pair_Event.holders.jsonApi());
-		evt = evt.target;
+	for (let i = 0; i < open_Cart.length; i++) {
 		
-		// TODO: this is temporary. once cart is built move all get
-		//  request to local property and update json server on order completion
-		Pair_Event.ajax.__ajax('GET').then((resolved) => {
+		
+		open_Cart[i].addEventListener('click', (evt) => {
+			//Pair_Event.ajax.put(Pair_Event.holders.jsonApi());
+			evt = evt.target;
 			
-			//let resolved = Pair_Event.holders.orderList();
-			Pair_Event.holders.orderList(resolved);
-			let addOrderID = document.querySelectorAll('.add_order_number');
-			if (resolved.pair_event_orders.length > 0) {
-				let targetItem = resolved.pair_event_orders[(resolved.pair_event_orders.length - 1)].orderId;
+			// TODO: this is temporary. once cart is built move all get
+			//  request to local property and update json server on order completion
+			Pair_Event.ajax.__ajax('GET').then((resolved) => {
 				
-				for (let s = 0; s < addOrderID.length; s++) {
-					addOrderID[s].dataset.orderid = (parseInt(targetItem) + 1);
-					addOrderID[s].dataset.orderIndex = resolved.pair_event_orders.length.toString();
+				//let resolved = Pair_Event.holders.orderList();
+				Pair_Event.holders.orderList(resolved);
+				let addOrderID = document.querySelectorAll('.add_order_number');
+				if (resolved.pair_event_orders.length > 0) {
+					let targetItem = resolved.pair_event_orders[(resolved.pair_event_orders.length - 1)].orderId;
+					
+					for (let s = 0; s < addOrderID.length; s++) {
+						addOrderID[s].dataset.orderid = (parseInt(targetItem) + 1);
+						addOrderID[s].dataset.orderIndex = resolved.pair_event_orders.length.toString();
+					}
+				} else {
+					for (let s = 0; s < addOrderID.length; s++) {
+						addOrderID[s].dataset.orderid = 1;
+						addOrderID[s].dataset.orderIndex = 0;
+					}
 				}
-			} else {
-				for (let s = 0; s < addOrderID.length; s++) {
-					addOrderID[s].dataset.orderid = 1;
-					addOrderID[s].dataset.orderIndex = 0;
-				}
-			}
+				
+			}, (rejected) => {
+				console.log('Data couldn\'t be sent!')
+			});
 			
-		}, (rejected) => {
-			console.log('Data couldn\'t be sent!')
+			
+			document.getElementById(evt.dataset.modalType).style.display = 'grid';
+			
+			Pair_Event.holders.cart_n_glide = new Glide('#shop_baskets', {
+				type: 'slider',
+				autoplay: false,
+				animationDuration: 2000,
+				perView: 1,
+				// startAt: 2,
+				hoverpause: false,
+				keyboard: false
+			}).mount();
+			
+			Pair_Event.holders.cart_n_glide.disable();
+			
 		});
-		
-		
-		document.getElementById(evt.dataset.modalType).style.display = 'grid';
-		
-		Pair_Event.holders.cart_n_glide = new Glide('#shop_baskets', {
-			type: 'slider',
-			autoplay: false,
-			animationDuration: 2000,
-			perView: 1,
-			// startAt: 2,
-			hoverpause: false,
-			keyboard: false
-		}).mount();
-		
-		Pair_Event.holders.cart_n_glide.disable();
-		
-	});
+	}
 })();
 
 // Close basket
@@ -676,9 +701,9 @@ const Pair_Event = {
 			evt = evt.target;
 			let data = evt.dataset;
 			
-			if(data.phase === "3"){
+			if (data.phase === "3") {
 				document.location.reload()
-			}else{
+			} else {
 				basket_modal.style.display = 'none'
 			}
 			
@@ -858,10 +883,6 @@ const Pair_Event = {
 })();
 
 // Move to Phase 2
-// TODO:  every time the cart opens a new index and id is
-//  added, so when active cart is reopened it cant be found
-
-
 (function () {
 	
 	'use strict';
@@ -933,22 +954,22 @@ const Pair_Event = {
 								message: "Provide a valid expiry date",
 								isSuccess: false
 							});
-						}else{
+						} else {
 							
-							let month = expiryDate.value.slice(0,2);
-							let year = expiryDate.value.slice(3,5);
+							let month = expiryDate.value.slice(0, 2);
+							let year = expiryDate.value.slice(3, 5);
 							let thisYear = new Date().getFullYear().toString().substr(-2);
 							thisYear = Number(thisYear);
 							
-							if(month < 1 || month > 12){
+							if (month < 1 || month > 12) {
 								notifierObject.push({
 									target: "cartExpiryDateMonth",
 									message: "Expiry month is out of range",
 									isSuccess: false
 								});
 							}
-						
-							if(year < thisYear || year > (thisYear+5)){
+							
+							if (year < thisYear || year > (thisYear + 5)) {
 								notifierObject.push({
 									target: "cartExpiryDateExceeded",
 									message: "Expiry year is out of range",
@@ -959,7 +980,7 @@ const Pair_Event = {
 						
 						let securityCode = document.getElementById('stripe_card_secure_code');
 						let regExSecureCode = new RegExp(/^[0-9]{3}$/);
-
+						
 						if (!regExSecureCode.test(securityCode.value)) {
 							notifierObject.push({
 								target: "cartSecureCode",
@@ -973,14 +994,14 @@ const Pair_Event = {
 						let paypalUsername = document.getElementById('paypal_login_id');
 						let paypalPassword = document.getElementById('paypal_login_password');
 						
-						if(paypalUsername.value.length < 6){
+						if (paypalUsername.value.length < 6) {
 							notifierObject.push({
 								target: "cartPaypalUsername",
 								message: "Username not recognised",
 								isSuccess: false
 							});
 						}
-						if(paypalPassword.value.length < 6){
+						if (paypalPassword.value.length < 6) {
 							notifierObject.push({
 								target: "cartPaypalPassword",
 								message: "Password or Username was entered incorrectly",
@@ -995,7 +1016,7 @@ const Pair_Event = {
 					let paymentCity = document.getElementById('payment_city').value;
 					let paymentPostcode = document.getElementById('payment_postcode').value;
 					
-					if(paymentName === ''){
+					if (paymentName === '') {
 						notifierObject.push({
 							target: "cartPersonFirstName",
 							message: "Please supply your first name",
@@ -1003,14 +1024,14 @@ const Pair_Event = {
 						});
 					}
 					
-					if(paymentEmail === ''){
+					if (paymentEmail === '') {
 						notifierObject.push({
 							target: "cartPersonEmail",
 							message: "Please supply your email",
 							isSuccess: false
 						});
-					}else{
-						if(!Pair_Event.utils.isEmail(paymentEmail)){
+					} else {
+						if (!Pair_Event.utils.isEmail(paymentEmail)) {
 							notifierObject.push({
 								target: "cartPersonEmailValid",
 								message: "Invalid email provided",
@@ -1019,7 +1040,7 @@ const Pair_Event = {
 						}
 					}
 					
-					if(paymentStreet === ''){
+					if (paymentStreet === '') {
 						notifierObject.push({
 							target: "cartPersonStreet",
 							message: "Please supply your street",
@@ -1027,7 +1048,7 @@ const Pair_Event = {
 						});
 					}
 					
-					if(paymentCity === ''){
+					if (paymentCity === '') {
 						notifierObject.push({
 							target: "cartPersonCity",
 							message: "Please supply your city",
@@ -1035,7 +1056,7 @@ const Pair_Event = {
 						});
 					}
 					
-					if(paymentPostcode === ''){
+					if (paymentPostcode === '') {
 						notifierObject.push({
 							target: "cartPersonPostcode",
 							message: "Please supply your postcode",
@@ -1044,7 +1065,7 @@ const Pair_Event = {
 					}
 					
 					
-					if(notifierObject.length === 0){
+					if (notifierObject.length === 0) {
 						thisCart.customer.name = paymentName;
 						thisCart.customer.address = paymentStreet;
 						thisCart.customer.city = paymentCity;
@@ -1053,7 +1074,7 @@ const Pair_Event = {
 						
 						let displayPurchase = document.getElementById('the_success_order');
 						let html = ``;
-						for(let i =0; i < thisCart.orderItems.length; i++){
+						for (let i = 0; i < thisCart.orderItems.length; i++) {
 							console.log(thisCart.orderItems[i]);
 							html += `<section><figure>${thisCart.orderItems[i].title}: &nbsp;&nbsp;</figure><figure>#${thisCart.orderItems[i].quantity}</figure></section>`
 						}
@@ -1109,26 +1130,74 @@ const Pair_Event = {
 	
 })();
 
-// Card number validation
-// TODO: complete validation
+// Contact Message Validation
 (function () {
 	
 	'use strict';
 	
-	let cardNum = document.getElementById('stripe_card_number');
+	let contactMessageValidator = document.getElementById('contact_message_submitter');
 	
-	cardNum.addEventListener('keyup', (evt) => {
-		evt = evt.target;
-		let regEx = new RegExp(/^[\d ]+$/);
+	
+	contactMessageValidator.addEventListener('click', (evt) => {
+		evt.preventDefault();
 		
-		if (regEx.test(evt.value)) {
-			
-			cardNum.value = evt.value
-		} else {
-			cardNum.value
+		let contactFirstName = document.getElementById('contact_first_name').value;
+		let contactSurname = document.getElementById('contact_surname').value;
+		let contactEmail = document.getElementById('contact_email').value;
+		let contactTextarea = document.getElementById('contact_textarea').value;
+		let notifierObject = [];
+		
+		if (contactFirstName === '') {
+			notifierObject.push({
+				target: 'contact_form',
+				message: "Please supply a first name",
+				isSuccess: false
+			})
 		}
 		
+		if (contactSurname === '') {
+			notifierObject.push({
+				target: 'contact_form',
+				message: "Please supply your Surname",
+				isSuccess: false
+			})
+		}
+		
+		if (contactEmail === '') {
+			notifierObject.push({
+				target: 'contact_form',
+				message: 'Please supply your email',
+				isSuccess: false
+			})
+		}else{
+			if(!Pair_Event.utils.isEmail(contactEmail)){
+				notifierObject.push({
+					target: 'contact_form',
+					message: "Provide a valid email",
+					isSuccess: false
+				})
+			}
+		}
+		
+		if (contactTextarea === '') {
+			notifierObject.push({
+				target: 'contact_form',
+				message: "Need to add a message",
+				isSuccess: false
+			})
+		}
+		
+		if(notifierObject.length > 0){
+			Pair_Event.utils.notifier(notifierObject)
+		}else{
+			Pair_Event.utils.notifier({
+				target: 'contact_form',
+				message: "Message sent successfully",
+				isSuccess: true
+			});
+			
+			setTimeout(() => document.location.reload(), 3000)
+		}
 	})
 	
 })();
-

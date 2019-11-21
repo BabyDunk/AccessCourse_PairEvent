@@ -10,18 +10,39 @@
     <meta http-equiv="Cache-Control" content="">
     <meta name="keywords"
           content="technology, tech event, 5g, emerging tech, guest speaker, Rowan Hogman, Darren King, Professor Karen Cham, latest tech, belfast event">
+    <script type='text/javascript'
+            src='https://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=AvpfnN3JvPjZ97uohpZM5WCBTULUF_QUNrJbNgFio-HVBzlbIAieWaWHpz5Of8Uo'
+            async defer></script>
+    <script type='text/javascript'>
+		function GetMap() {
+			var map = new Microsoft.Maps.Map('#gMap', {
+				mapTypeId: Microsoft.Maps.MapTypeId.aerial,
+				center: new Microsoft.Maps.Location(54.597441, -5.919905),
+				zoom: 15,
+				showMapTypeSelector: false
+			});
+
+			// Add an info box pointing to the event location
+			var center = map.getCenter();
+			var infobox = new Microsoft.Maps.Infobox(center, {
+				title: 'Pair Event Present:',
+                description: '5G The Future Connection' });
+			infobox.setMap(map);
+
+		}
+    </script>
 
 </head>
 <body>
 <div id="Topper"></div>
 
 <!-- Initial Popup will display promotion and count down clock -->
-<section class="modal" id="initial_popup">-
+<section class="modal" id="initial_popup">
     <figure>
         <span class="close"><i class="far fa-times-circle"></i></span>
         <section>
             <section id="popup_promos">
-                <img src="assets/media/Technology-Event.jpg"
+                <img src="assets/media/Technology-Event-Cropped.png"
                      alt="An composite image of a globe with a digitally pretty wire frame around it">
                 <section class="title"><h1>Pair Event Proudly Presents:<br><span>&emsp;&emsp;&emsp;&emsp;5G The Future Event</span>
                 </h1></section>
@@ -43,7 +64,14 @@
                     </section>
                 </div>
 
-
+                <div class="social_links">
+                    <a title="Connect on Facebook"><span><i class="fab fa-facebook-f"></i></span></a>
+                    <a title="Connect on LinkedIn"><span><i class="fab fa-linkedin-in"></i></span></a>
+                    <a title="Connect on Pinterest"> <span><i class="fab fa-pinterest-p"></i></span></a>
+                    <a title="Connect on Instagram"> <span><i class="fab fa-instagram"></i></span></a>
+                    <a title="Connect on SlideShare"><span><i class="fab fa-slideshare"></i></span></a>
+                    <a title="Connect on Twitter"><span><i class="fab fa-twitter"></i></span></a>
+                </div>
             </section>
         </section>
 
@@ -51,21 +79,21 @@
 </section>
 
 <!-- Tech page Modal -->
-<section class="modal" id="tech_info_modal">-
+<section class="modal" id="tech_info_modal">
     <figure>
         <span class="close"><i class="far fa-times-circle"></i></span>
         <h1>5G The Future Connection</h1>
         <section>
             <img src="assets/media/road-animation-resized.gif"
                  alt="Whirlwind sweeping three and four g cell service when 5g sweeps into take there place">
-            <img src="assets/media/road-animation-2.gif"
-                 alt="Whirlwind sweeping three and four g cell service when 5g sweeps into take there place">
+            <!--<img src="assets/media/road-animation-2.gif"
+                 alt="Whirlwind sweeping three and four g cell service when 5g sweeps into take there place">-->
         </section>
     </figure>
 </section>
 
 <!-- Why Attend page Modal -->
-<section class="modal" id="why_attend_modal">-
+<section class="modal" id="why_attend_modal">
     <figure>
         <span class="close"><i class="far fa-times-circle"></i></span>
         <h1>Why Attend</h1>
@@ -75,20 +103,68 @@
     </figure>
 </section>
 
-
 <!-- Contact Modal -->
-<section class="modal" id="contact_modal">-
+<section class="modal" id="contact_modal">
     <figure>
         <span class="close"><i class="far fa-times-circle"></i></span>
-        <h1>Contact & Locator Page</h1>
-        <section>Count down clock</section>
-        <h1>We're here</h1>
+        <section id="contact_surrounded">
+            <section id="contact_top_box">
+                <section>
+                    <figure id="gMap">
+                        <img id="gMapPlaceholder" src="assets/media/locator_placeholder.png">
+                    </figure>
+                </section>
+                <section>
+                    <figure>
+                        <span class="title"> Contact Us</span>
+                        <figure>
+                            <ul>
+                                <li><span>Email:</span><a href="mailto:contact@pairevent.com">Contact@PairEvent.com</a></li>
+                                <li><span>Telephone:</span> <a href="tel:02890000000">02890000000</a></li>
+                            </ul>
+                        </figure>
+                    </figure>
+                </section>
+            </section>
+            <section id="contact_message_box">
+                <form>
+                   <section>
+                       <label for="contact_first_name">First Name:</label>
+                       <input type="text" id="contact_first_name" placeholder="Enter your first name">
+                       <label for="contact_surname">Surname:</label>
+                       <input type="text" id="contact_surname" placeholder="Enter your surname">
+                       <label for="contact_email">Email:</label>
+                       <input type="email" id="contact_email" placeholder="Enter your email">
+                   </section>
+                    <section>
+                        <label for="contact_textarea">Your Query</label>
+                        <textarea rows="9" id="contact_textarea" placeholder="Com'on fill us in!"></textarea>
+                    </section>
+                    <section>
+                        <button id="contact_message_submitter" class="button">Tell Me</button>
+                    </section>
+                </form>
+                <div class="notifier">
+                </div>
+                <div id="contact_message_notice">
+                    <span>Email Us Directly</span>
+                </div>
+            </section>
 
+        </section>
+        <div class="social_links">
+            <a title="Connect on Facebook"><span><i class="fab fa-facebook-f"></i></span></a>
+            <a title="Connect on LinkedIn"><span><i class="fab fa-linkedin-in"></i></span></a>
+            <a title="Connect on Pinterest"> <span><i class="fab fa-pinterest-p"></i></span></a>
+            <a title="Connect on Instagram"> <span><i class="fab fa-instagram"></i></span></a>
+            <a title="Connect on SlideShare"><span><i class="fab fa-slideshare"></i></span></a>
+            <a title="Connect on Twitter"><span><i class="fab fa-twitter"></i></span></a>
+        </div>
     </figure>
 </section>
 
 <!-- Term and Conditions Modal -->
-<section class="modal" id="t&c_modal">-
+<section class="modal" id="t&c_modal">
     <figure>
         <span class="close"><i class="far fa-times-circle"></i></span>
 
@@ -691,7 +767,7 @@
 </section>
 
 <!-- Term and Conditions Modal -->
-<section class="modal" id="privacy_modal">-
+<section class="modal" id="privacy_modal">
     <figure>
         <span class="close"><i class="far fa-times-circle"></i></span>
         <h1>Privacy &amp; Cookies</h1>
@@ -914,7 +990,7 @@
                                 <label for="payment_postcode">Postcode:</label>
                                 <input type="text" id="payment_postcode" placeholder="Please provide postcode">
                                 <label for="payment_email">Email:</label>
-                                <input type="text" id="payment_email" placeholder="Please provide email">
+                                <input type="email" id="payment_email" placeholder="Please provide email">
                             </form>
 
                             <section class="move_pay">
@@ -1021,7 +1097,7 @@
                 <figure class='counter_seconds'></figure>
             </section>
         </div>
-        <div id="social_links">
+        <div class="social_links">
             <a title="Connect on Facebook"><span><i class="fab fa-facebook-f"></i></span></a>
             <a title="Connect on LinkedIn"><span><i class="fab fa-linkedin-in"></i></span></a>
             <a title="Connect on Pinterest"> <span><i class="fab fa-pinterest-p"></i></span></a>
@@ -1055,7 +1131,7 @@
                 <input placeholder="Provide your email address" required type="email" id="get_notified_address"/>
                 <button id="get_notified" class="button">Join List</button>
 
-                <button class="button opener" data-modal-type="shop_baskets">How To Attend</button>
+                <button class="button basket_opener" data-modal-type="shop_baskets">How To Attend</button>
             </section>
 
         </div>
@@ -1120,7 +1196,8 @@
             <span>Don't Miss Out</span>
             <ul>
                 <li><a href="#dont_miss" id="getReminder" target="_self">Email Reminders</a></li>
-                <li><a href="#" data-modal-type="shop_baskets" class="opener" target="_self">Order a Ticket</a></li>
+                <li><a href="#" data-modal-type="shop_baskets" class="basket_opener" target="_self">Order a Ticket</a>
+                </li>
 
             </ul>
         </figure>
