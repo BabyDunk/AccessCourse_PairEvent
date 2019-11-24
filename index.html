@@ -10,6 +10,17 @@
     <meta http-equiv="Cache-Control" content="">
     <meta name="keywords"
           content="technology, tech event, 5g, emerging tech, guest speaker, Rowan Hogman, Darren King, Professor Karen Cham, latest tech, belfast event">
+
+    <!-- FB Share -->
+    <meta property="og:url" content="https://pairevent.babydunk.co.uk/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Pair Event Presents: 5G The Future Connection" />
+    <meta property="og:description" content="College project to build a website around emerging technology" />
+    <meta property="og:image" content="https://pairevent.babydunk.co.uk/assets/media/smaller_logo.png" />
+    <meta property="og:image:width" content="800" />
+    <meta property="og:image:height" content="600" />
+    <!-- FB Share -->
+
     <script type='text/javascript'
             src='https://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=AvpfnN3JvPjZ97uohpZM5WCBTULUF_QUNrJbNgFio-HVBzlbIAieWaWHpz5Of8Uo'
             async defer></script>
@@ -26,7 +37,8 @@
 			var center = map.getCenter();
 			var infobox = new Microsoft.Maps.Infobox(center, {
 				title: 'Pair Event Present:',
-                description: '5G The Future Connection' });
+				description: '5G The Future Connection'
+			});
 			infobox.setMap(map);
 
 		}
@@ -35,7 +47,6 @@
 </head>
 <body>
 <div id="Topper"></div>
-
 <!-- Initial Popup will display promotion and count down clock -->
 <section class="modal" id="initial_popup">
     <figure>
@@ -44,15 +55,16 @@
             <section id="popup_promos">
                 <img src="assets/media/Technology-Event-Cropped.png"
                      alt="An composite image of a globe with a digitally pretty wire frame around it">
-                <section class="title"><h1>Pair Event Proudly Presents:<br><span>&emsp;&emsp;&emsp;&emsp;5G The Future Event</span>
+                <section class="title"><h1 class="translation" data-translation-id="1">Pair Event Proudly
+                    Presents:<br><span class="translation" data-translation-id="2">&emsp;&emsp;&emsp;&emsp;5G The Future Event</span>
                 </h1></section>
                 <section class="promotion">
                     <span class="popup_promotion"></span>
                     <ul>
-                        <li>Free Admission For Students</li>
-                        <li>Free Give Aways Throughout The Event</li>
-                        <li>Chance To Win Apple Products</li>
-                        <li>And Much Much More</li>
+                        <li class="translation" data-translation-id="3">Free Admission For Students</li>
+                        <li class="translation" data-translation-id="4">Free Give Aways Throughout The Event</li>
+                        <li class="translation" data-translation-id="5">Chance To Win Apple Products</li>
+                        <li class="translation" data-translation-id="6">And Much Much More</li>
                     </ul>
                 </section>
                 <div class="countdown">
@@ -69,37 +81,11 @@
                     <a title="Connect on LinkedIn"><span><i class="fab fa-linkedin-in"></i></span></a>
                     <a title="Connect on Pinterest"> <span><i class="fab fa-pinterest-p"></i></span></a>
                     <a title="Connect on Instagram"> <span><i class="fab fa-instagram"></i></span></a>
-                    <a title="Connect on SlideShare"><span><i class="fab fa-slideshare"></i></span></a>
                     <a title="Connect on Twitter"><span><i class="fab fa-twitter"></i></span></a>
                 </div>
             </section>
         </section>
 
-    </figure>
-</section>
-
-<!-- Tech page Modal -->
-<section class="modal" id="tech_info_modal">
-    <figure>
-        <span class="close"><i class="far fa-times-circle"></i></span>
-        <h1>5G The Future Connection</h1>
-        <section>
-            <img src="assets/media/road-animation-resized.gif"
-                 alt="Whirlwind sweeping three and four g cell service when 5g sweeps into take there place">
-            <!--<img src="assets/media/road-animation-2.gif"
-                 alt="Whirlwind sweeping three and four g cell service when 5g sweeps into take there place">-->
-        </section>
-    </figure>
-</section>
-
-<!-- Why Attend page Modal -->
-<section class="modal" id="why_attend_modal">
-    <figure>
-        <span class="close"><i class="far fa-times-circle"></i></span>
-        <h1>Why Attend</h1>
-        <section>
-            <p>place some text here</p>
-        </section>
     </figure>
 </section>
 
@@ -116,11 +102,13 @@
                 </section>
                 <section>
                     <figure>
-                        <span class="title"> Contact Us</span>
+                        <span class="title translation" data-translation-id="7">Contact Us</span>
                         <figure>
                             <ul>
-                                <li><span>Email:</span><a href="mailto:contact@pairevent.com">Contact@PairEvent.com</a></li>
-                                <li><span>Telephone:</span> <a href="tel:02890000000">02890000000</a></li>
+                                <li><span>Email:</span><a href="mailto:contact@pairevent.com">Contact@PairEvent.com</a>
+                                </li>
+                                <li><span class="translation" data-translation-id="8">Telephone:</span> <a
+                                        href="tel:02890000000">02890000000</a></li>
                             </ul>
                         </figure>
                     </figure>
@@ -128,38 +116,33 @@
             </section>
             <section id="contact_message_box">
                 <form>
-                   <section>
-                       <label for="contact_first_name">First Name:</label>
-                       <input type="text" id="contact_first_name" placeholder="Enter your first name">
-                       <label for="contact_surname">Surname:</label>
-                       <input type="text" id="contact_surname" placeholder="Enter your surname">
-                       <label for="contact_email">Email:</label>
-                       <input type="email" id="contact_email" placeholder="Enter your email">
-                   </section>
                     <section>
-                        <label for="contact_textarea">Your Query</label>
+                        <label for="contact_first_name" class="translation" data-translation-id="9">First Name:</label>
+                        <input type="text" id="contact_first_name" placeholder="Enter your first name">
+                        <label for="contact_surname" class="translation" data-translation-id="10">Surname:</label>
+                        <input type="text" id="contact_surname" placeholder="Enter your surname">
+                        <label for="contact_email">Email:</label>
+                        <input type="email" id="contact_email" placeholder="Enter your email">
+                    </section>
+                    <section>
+                        <label for="contact_textarea" class="translation" data-translation-id="11">Your Query</label>
                         <textarea rows="9" id="contact_textarea" placeholder="Com'on fill us in!"></textarea>
                     </section>
                     <section>
-                        <button id="contact_message_submitter" class="button">Tell Me</button>
+                        <button id="contact_message_submitter" class="button translation" data-translation-id="12">Tell
+                            Me
+                        </button>
                     </section>
                 </form>
                 <div class="notifier">
                 </div>
                 <div id="contact_message_notice">
-                    <span>Email Us Directly</span>
+                    <span class="translation" data-translation-id="13">Email Us Directly</span>
                 </div>
             </section>
 
         </section>
-        <div class="social_links">
-            <a title="Connect on Facebook"><span><i class="fab fa-facebook-f"></i></span></a>
-            <a title="Connect on LinkedIn"><span><i class="fab fa-linkedin-in"></i></span></a>
-            <a title="Connect on Pinterest"> <span><i class="fab fa-pinterest-p"></i></span></a>
-            <a title="Connect on Instagram"> <span><i class="fab fa-instagram"></i></span></a>
-            <a title="Connect on SlideShare"><span><i class="fab fa-slideshare"></i></span></a>
-            <a title="Connect on Twitter"><span><i class="fab fa-twitter"></i></span></a>
-        </div>
+
     </figure>
 </section>
 
@@ -1051,6 +1034,31 @@
     </section>
 </section>
 
+<!-- Tech page Modal -->
+<section class="modal" id="tech_info_modal">
+    <figure>
+        <span class="close"><i class="far fa-times-circle"></i></span>
+        <h1>5G The Future Connection</h1>
+        <section>
+            <img src="assets/media/road-animation-resized.gif"
+                 alt="Whirlwind sweeping three and four g cell service when 5g sweeps into take there place">
+
+        </section>
+    </figure>
+</section>
+
+<!-- Why Attend page Modal -->
+<section class="modal" id="why_attend_modal">
+    <figure>
+        <span class="close"><i class="far fa-times-circle"></i></span>
+        <h1>Why Attend</h1>
+        <section>
+            <p>place some text here</p>
+        </section>
+    </figure>
+</section>
+
+
 <header id="theHeader">
     <nav>
         <div>
@@ -1058,6 +1066,40 @@
                 <img id="logo_img"
                      src="assets/media/smaller_logo.png"
                      alt="Event logo image"></a>
+        </div>
+        <div id="translator_menu">
+            <ul>
+                <li><img class="translator_selector"
+                         data-trans-lang="en" data-translator-selected
+                         src="assets/media/flags/flag_uk.png"
+                         alt="Translator option for English"
+                         title="Translator option for English">
+                </li>
+                <li><img class="translator_selector"
+                         data-trans-lang="es"
+                         src="assets/media/flags/flag_spanish.png"
+                         alt="Translator option for Spanish"
+                         title="Translator option for Spanish">
+                </li>
+                <li><img class="translator_selector"
+                         data-trans-lang="fr"
+                         src="assets/media/flags/flag_french.png"
+                         alt="Translator option for French"
+                         title="Translator option for French">
+                </li>
+                <li><img class="translator_selector"
+                         data-trans-lang="it"
+                         src="assets/media/flags/flag_italian.png"
+                         alt="Translator option for Italian"
+                         title="Translator option for Italian">
+                </li>
+                <li><img class="translator_selector"
+                         data-trans-lang="de"
+                         src="assets/media/flags/flag_german.png"
+                         alt="Translator option for German"
+                         title="Translator option for German">
+                </li>
+            </ul>
         </div>
         <div>
             <a href="#" target="_self" hreflang="en" class="opener" title="Move to the contact and locator page"
@@ -1080,13 +1122,16 @@
 
         <div id="video_cover"></div>
         <div id="event_title">
-            <h1 class="title">Pair Events Presents:<br> &emsp; &emsp;<small>5G The Future Connection</small></h1>
+            <h1 class="title translation" data-translation-id="14">Pair Events Presents:<br> &emsp; &emsp;<small>5G The
+                Future Connection</small></h1>
         </div>
         <div id="top_links">
-            <a id="tech_info_modal_opener" href="#tech_info_modal" target="_self"><span class="top_title title"><i
+            <a id="tech_info_modal_opener" href="#tech_info_modal" target="_self"><span
+                    class="top_title title translation" data-translation-id="15"><i
                     class="far fa-square"></i>&nbsp;LEARN THE<br>TECH</span></a>
             <br>
-            <a id="meet_the_experts_opener" href="#experts" target="_self"><span class="top_title title"><i
+            <a id="meet_the_experts_opener" href="#experts" target="_self"><span class="top_title title translation"
+                                                                                 data-translation-id="16"><i
                     class="far fa-square"></i>&nbsp;MEET THE  <br>EXPERTS</span></a>
         </div>
         <div class="countdown">
@@ -1102,7 +1147,6 @@
             <a title="Connect on LinkedIn"><span><i class="fab fa-linkedin-in"></i></span></a>
             <a title="Connect on Pinterest"> <span><i class="fab fa-pinterest-p"></i></span></a>
             <a title="Connect on Instagram"> <span><i class="fab fa-instagram"></i></span></a>
-            <a title="Connect on SlideShare"><span><i class="fab fa-slideshare"></i></span></a>
             <a title="Connect on Twitter"><span><i class="fab fa-twitter"></i></span></a>
         </div>
         <section id="attendance_bar">
@@ -1123,40 +1167,148 @@
 
     </section>
 
+
     <section id="dont_miss">
-        <figure class="notifier"></figure>
-        <div>
-            <section>
-                <button class="button opener" data-modal-type="why_attend_modal">Why Attend?</button>
-                <input placeholder="Provide your email address" required type="email" id="get_notified_address"/>
-                <button id="get_notified" class="button">Join List</button>
+        <article class="titliler">
+            <span class="section_title translation" data-translation-id="17">Stay In The Loop</span>
+            <p class="section_preamble translation" data-translation-id="18">We can notify you of any updates or changes
+                to the itinerary</p>
+        </article>
 
-                <button class="button basket_opener" data-modal-type="shop_baskets">How To Attend</button>
-            </section>
+        <article>
+            <figure class="notifier"></figure>
+            <div>
+                <section>
+                    <button class="button opener translation" data-translation-id="19" data-modal-type="why_attend_modal"
+                            title="Move to the Why Attend page to learn about this exciting event" >Why Attend?
+                    </button>
+                    <input placeholder="Provide your email address" required type="email" id="get_notified_address"/>
+                    <button id="get_notified" class="button translation" data-translation-id="20"
+                            title="Add your email address and hit this button to get notifier of exciting developments for this event">
+                        Join List
+                    </button>
 
-        </div>
+                    <button class="button basket_opener translation" data-translation-id="21" data-modal-type="shop_baskets"
+                            title="To attend just click this button and purchase a ticket, all student are free when they provide a valid academic email address">
+                        How To Attend
+                    </button>
+                </section>
+
+            </div>
+        </article>
 
     </section>
 
     <section id="experts">
-        <figure>
-            <img src="assets/media/person-placeholder-male-5.jpg" alt="This is a picture of event speaker Rowan Hogman">
-            <figcaption>Rowan Hogman</figcaption>
-        </figure>
-        <figure>
-            <img src="assets/media/person-placeholder-male-5.jpg" alt="This is a picture of event speaker Rowan Hogman">
-            <figcaption>Darren King</figcaption>
-        </figure>
-        <figure>
-            <img src="assets/media/person-placeholder-male-5.jpg" alt="This is a picture of event speaker Rowan Hogman">
-            <figcaption>Professor Karen Cham</figcaption>
-        </figure>
+        <article class="titliler">
+            <span class="section_title translation" data-translation-id="22">Speakers</span>
+            <p class="section_preamble translation" data-translation-id="23">Industry leaders share their ideas on the future of this emerging technology
+                and show us how higher bandwidth will open up our devices to do so much more</p>
+        </article>
+        <section>
+            <div class="scene">
+                <div class="card" title="Click and hold me!">
+                    <div class="card__face card__face--front">
+                        <figure>
+                            <img src="assets/media/rowan_hogman.png"
+                                 alt="This is a picture of event speaker Rowan Hogman">
+                            <figcaption>
+                                <h3>ROWAN HÖGMAN</h3>
+                                <p>Research Leader 5G Industry Collaborations, Ericsson</p>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="card__face card__face--back">
+                        <p>Rowan Högman is Research Leader and Head of 5G Industry
+                            Collaborations at Ericsson. In this capacity he is responsible for coordinating and
+                            accumulating
+                            insights from Ericsson’s more than 50 5G research industry collaborations. Mr Högman was
+                            between
+                            2016 and 2018 Head of Ericsson’s Marketing & Communications Operations. Previous to this,
+                            Rowan
+                            Högman was Head of Strategic Marketing 2015-2016 and has
+                            held various leading roles in the communications industry the past 20 years. </p>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="scene">
+                <div class="card" title="Click and hold me!">
+                    <div class="card__face card__face--front">
+                        <figure>
+                            <img src="assets/media/karen_cham.png"
+                                 alt="This is a picture of event speaker Professor Karen Cham">
+                            <figcaption>
+                                <h3> Professor Karen Cham</h3>
+                                <p>Professor of Digital Transformation Design at the University of Brighton;</p>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="card__face card__face--back">
+                        <p>Karen is currently Professor of Digital Transformation
+                            Design at the University of Brighton; University Lead for the research theme ‘Connected
+                            Futures’
+                            and Academic Lead of the Digital Catapult Centre Brighton (DCCB). She is a Women in Games
+                            Ambassador and with a background in experimental electronic arts, she has 24 years'
+                            experience
+                            designing human-centred experiences of next generation digital.</p>
+                        <p>Her first website was 1994, She won EU recognition for the micro-business model in
+                            1997 and devised and established what is now Sprint0 at Evans Hunt Scott in 1998. Clients
+                            have included PlayStation, Diesel, ITV, Which?, Top Shop and EY. </p>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="scene">
+                <div class="card" title="Click and hold me!">
+                    <div class="card__face card__face--front">
+                        <figure>
+                            <img src="assets/media/darren_king.png"
+                                 alt="This is a picture of event speaker Darren King">
+                            <figcaption>
+                                <h3>DARREN KING</h3>
+                                <p>Head of Business Development, Three</p></figcaption>
+                        </figure>
+                    </div>
+                    <div class="card__face card__face--back">
+                        <p>Darren is Head of Business Development and IOT at Three UK. He owns IOT, MVNO and wholesale
+                            commercial partnerships, and has been instrumental in driving Three’s IOT growth strategy
+                            which includes 5G and NBIOT. Prior to joining Three, Darren was General Manager of Products
+                            for BT, where he led their
+                            re-entry into the consumer mobile space. In addition to day-to-day operation of the
+                            business, Darren was responsible for BT Mobile’s ‘Digital and Mobile First’ strategy,
+                            driving BT’s highest online engagement through sales, service, and app.</p>
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
 
     </section>
+    <div class="fixed_background"></div>
+    <div id="bg_holder">
+        <div class="shareus_wrapper">
+            <span class="shareus" id="shareUsSlide" title="Click To Close!"><i class="fas fa-people-carry"></i> Share Us!</span>
+            <div class="social_links">
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fpairevent.babydunk.co.uk&t=Pair%20Event%20Presents%3A%205G%20The%20Future%20Connection" class="shareUsClicker" title="Connect on Facebook"><span><i class="fab fa-facebook-f"></i></span></a>
+                <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fpairevent.babydunk.co.uk&title=Pair%20Event%20Presents%3A%205G%20The%20Future%20Connection" class="shareUsClicker" title="Connect on LinkedIn"><span><i class="fab fa-linkedin-in"></i></span></a>
+                <a href="http://pinterest.com/pin/create/button/?url=https%3A%2F%2Fpairevent.babydunk.co.uk&media=https://pairevent.babydunk.co.uk/assets/media/smaller_logo.png&description=Pair%20Event%20Presents%3A%205G%20The%20Future%20Connection" class="shareUsClicker" title="Connect on Pinterest"> <span><i class="fab fa-pinterest-p"></i></span></a>
+                <a class="shareUsClicker" title="Connect on Instagram"> <span><i class="fab fa-instagram"></i></span></a>
+                <a href="https://twitter.com/share?url=https%3A%2F%2Fpairevent.babydunk.co.uk&text=Pair%20Event%20Presents%3A%205G%20The%20Future%20Connection" class="shareUsClicker" title="Connect on Twitter"><span><i class="fab fa-twitter"></i></span></a>
+            </div>
+        </div>
+    </div>
 
     <section id="sponsors">
         <section data-glide-el="track">
             <section>
+                <img class="sponsor_logo logo_bottom" src="assets/media/brands/dell-technologies-partner-logo-450px.png"
+                     title="Sponsor logo of Dell"
+                     alt="Sponsor logo of Dell">
                 <img class="sponsor_logo logo_top" src="assets/media/brands/bt.png"
                      title="Sponsor logo of British Telecom"
                      alt="Sponsor logo of British Telecom">
@@ -1176,12 +1328,13 @@
                 <img class="sponsor_logo logo_bottom"
                      src="assets/media/brands/hitachi-png-gallery-of-hitachi-logo-png-2728.png"
                      alt="Sponsor logo of Hitachi">
+                <img class="sponsor_logo logo_top" src="assets/media/brands/amd.png" alt="Sponsor logo of Amd">
+
             </section>
         </section>
     </section>
 
 </main>
-
 <footer>
     <section>
         <figure>
@@ -1228,5 +1381,6 @@
 <script src="assets/js/app.js" type="application/javascript"></script>
 
 </body>
+
 </html>
 

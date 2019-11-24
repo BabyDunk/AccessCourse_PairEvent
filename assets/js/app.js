@@ -1,4 +1,7 @@
 // TODO: contact page
+// TODO:        needs a radio selector added to narrow down contact submission
+// TODO: Shopping cart
+// TODO:        need to do checks for student email when student tickets are purchased
 // TODO: translator
 // TODO: privacy policy
 // TODO: why attend
@@ -396,6 +399,30 @@ const Pair_Event = {
 		formValidation: () => {
 		
 		},
+		headerShrink: () => {
+			let getHeader = document.getElementById('theHeader');
+			let translator = {};
+			
+			window.addEventListener('scroll', () => {
+				
+				window.requestAnimationFrame(function () {
+					translator = document.querySelectorAll('#translator_menu ul')[0];
+					
+					if (getHeader.scrollTop === window.scrollY) {
+						
+						getHeader.classList.remove('slim_line_nav');
+						translator.style.margin = "15px 0";
+						
+					} else {
+						getHeader.classList.add('slim_line_nav');
+						translator.style.margin = "0px";
+					}
+					
+					
+				})
+			})
+			
+		},
 		getOrderByIndex: (orderID, itemID = null) => {
 			
 			let theCarts = Pair_Event.holders.orderList();
@@ -442,6 +469,20 @@ const Pair_Event = {
 				}, 1)
 			}
 		},
+		translated: (language, translations) => {
+			let toTranslate = document.querySelectorAll('.translation');
+			
+			for (let i = 0; i < toTranslate.length; i++) {
+				let thisEl = toTranslate[i];
+				let theData = thisEl.dataset;
+				console.log(theData.translationId)
+				let theTranslation = translations[theData.translationId][language];
+				console.log(theTranslation)
+				thisEl.innerHTML = null;
+				thisEl.innerHTML = theTranslation;
+				
+			}
+		}
 	},
 	holders: {
 		priceList: () => {
@@ -508,6 +549,190 @@ const Pair_Event = {
 			this.orders = (orderJson !== '') ? orderJson : this.orders;
 			
 			return this.orders
+		},
+		translations: {
+			1: {
+				en: "Pair Event Proudly Presents:",
+				es: "El evento Pair presenta con orgullo:",
+				fr: "L'événement en couple présente fièrement:",
+				it: "Accoppia gli eventi con orgoglio:",
+				de: "Paar evenement presenteert met trots:"
+			},
+			2: {
+				en: "&emsp;&emsp;&emsp;5G The Future Event",
+				es: "&emsp;&emsp;&emsp;5G El evento futuro",
+				fr: "&emsp;&emsp;&emsp;5G L'événement futur",
+				it: "&emsp;&emsp;&emsp;5G The Future Event",
+				de: "&emsp;&emsp;&emsp;5G Das zukünftige Ereignis"
+			},
+			3: {
+				en: "Free Admission For Students",
+				es: "Entrada gratuita para estudiantes",
+				fr: "Entrée gratuite pour les étudiants",
+				it: "Ingresso gratuito per gli studenti",
+				de: "Freier Eintritt für Studierende"
+			},
+			4: {
+				en: "Free Give Aways Throughout The Event",
+				es: "Regalos gratis durante todo el evento",
+				fr: "Dons gratuits tout au long de l'événement",
+				it: "Dare sempre durante l'evento",
+				de: "Give Aways während der Veranstaltung"
+			},
+			5: {
+				en: "Chance To Win Apple Products",
+				es: "Oportunidad de ganar productos de Apple",
+				fr: "Chance de gagner des produits Apple",
+				it: "Possibilità di vincere prodotti Apple",
+				de: "Chance, Apple-Produkte zu gewinnen"
+			},
+			6: {
+				en: "And Much Much More",
+				es: "Y mucho, mucho más",
+				fr: "Et bien plus encore",
+				it: "E molto altro ancora",
+				de: "Und sehr viel mehr"
+			},
+			7: {
+				en: "Contact Us",
+				es: "Contáctenos",
+				fr: "Contactez nous",
+				it: "Contattaci",
+				de: "Kontaktiere uns"
+			},
+			8: {
+				en: "Telephone:",
+				es: "Teléfono:",
+				fr: "Téléphone:",
+				it: "Telefono:",
+				de: "Telefon:"
+			},
+			9: {
+				en: "First Name:",
+				es: "Nombre de pila:",
+				fr: "Prénom:",
+				it: "Nome di battesimo:",
+				de: "Vorname:"
+			},
+			10: {
+				en: "Surname:",
+				es: "Apellido:",
+				fr: "Nom de famille:",
+				it: "Cognome:",
+				de: "Nachname:"
+			},
+			11: {
+				en: "Your Query",
+				es: "Su consulta",
+				fr: "Votre requête",
+				it: "La tua domanda",
+				de: "Ihre Anfrage"
+			},
+			12: {
+				en: "Tell Me",
+				es: "Dime",
+				fr: "Dîtes-moi",
+				it: "Dimmi",
+				de: "Sag mir"
+			},
+			13: {
+				en: "Email Us Directly",
+				es: "Envíenos un correo electrónico directamente",
+				fr: "Envoyez-nous un courriel directement",
+				it: "Inviaci un'e-mail direttamente",
+				de: "Mailen Sie uns direkt"
+			},
+			14: {
+				en: "Pair Event Proudly Presents:<br> &emsp; &emsp;<small>5G The Future Connection</small>",
+				es: "El evento Pair presenta con orgullo:<br> &emsp; &emsp;<small>5G El evento futuro</small>",
+				fr: "L'événement en couple présente fièrement:<br> &emsp; &emsp;<small>5G L'événement futur</small>",
+				it: "Accoppia gli eventi con orgoglio:<br> &emsp; &emsp;<small>5G The Future Connection</small>",
+				de: "Paar evenement presenteert met trots:<br> &emsp; &emsp;<small>5G Das zukünftige Ereignis</small>"
+			},
+			15: {
+				en: "<i class='far fa-square'></i>&nbsp;LEARN THE<br>TECH",
+				es: "<i class='far fa-square'></i>&nbsp;APRENDE EL<br>TECH",
+				fr: "<i class='far fa-square'></i>&nbsp;APPRENEZ LA<br>TECHNOLOGIE",
+				it: "<i class='far fa-square'></i>&nbsp;IMPARA IL<br>TECH",
+				de: "<i class='far fa-square'></i>&nbsp;LERNE DAS<br>TECHNIK"
+			},
+			16: {
+				en: "<i class='far fa-square'></i>&nbsp;MEET THE  <br>EXPERTS",
+				es: "<i class='far fa-square'></i>&nbsp;SATISFACER LA  <br>Expertos",
+				fr: "<i class='far fa-square'></i>&nbsp;RENCONTRER LE  <br>EXPERTS",
+				it: "<i class='far fa-square'></i>&nbsp;INCONTRA IL  <br>ESPERTI",
+				de: "<i class='far fa-square'></i>&nbsp;TREFFE DEN  <br>EXPERTEN"
+			},
+			17: {
+				en: "Stay In The Loop",
+				es: "Permanecer en el bucle",
+				fr: "Rester dans la boucle",
+				it: "Stay In The Loop",
+				de: "Bleiben Sie auf dem Laufenden"
+			},
+			18: {
+				en: "We can notify you of any updates or changes to the itinerary",
+				es: "Podemos notificarle sobre cualquier actualización o cambio en el itinerario.",
+				fr: "Nous pouvons vous informer de toute mise à jour ou modification de l'itinéraire",
+				it: "Siamo in grado di avvisare di eventuali aggiornamenti o modifiche all'itinerario",
+				de: "Wir können Sie über Aktualisierungen oder Änderungen der Reiseroute informieren"
+			},
+			19: {
+				en: "Why Attend?",
+				es: "¿Por qué asistir?",
+				fr: "Pourquoi assister?",
+				it: "Perché partecipare?",
+				de: "Warum teilnehmen?"
+			},
+			20: {
+				en: "Join List",
+				es: "Unirse a la lista",
+				fr: "Rejoindre la liste",
+				it: "Iscriviti alla lista",
+				de: "Beitrittsliste"
+			},
+			21: {
+				en: "How To Attend",
+				es: "Cómo asistir",
+				fr: "Comment participer",
+				it: "Come partecipare",
+				de: "Wie nehme ich teil?"
+			},
+			22: {
+				en: "Speakers",
+				es: "el altavoz",
+				fr: "Haut-parleurs",
+				it: "Altoparlanti",
+				de: "der Sprecher"
+			},
+			23: {
+				en: "Industry leaders share their ideas on the future of this emerging technology and show us how higher bandwidth will open up our devices to do so much more",
+				es: "Los líderes de la industria comparten sus ideas sobre el futuro de esta tecnología emergente y nos muestran cómo un mayor ancho de banda abrirá nuestros dispositivos para hacer mucho más",
+				fr: "Les chefs de file du secteur partagent leurs idées sur l'avenir de cette technologie émergente et nous montrent comment une bande passante plus large ouvrira nos appareils à faire tellement plus",
+				it: "I leader del settore condividono le loro idee sul futuro di questa tecnologia emergente e ci mostrano come una maggiore larghezza di banda aprirà i nostri dispositivi per fare molto di più",
+				de: "Branchenführer teilen ihre Vorstellungen über die Zukunft dieser aufstrebenden Technologie mit und zeigen uns, wie eine höhere Bandbreite unsere Geräte für weitaus mehr Möglichkeiten öffnet"
+			},
+			24: {
+				en: "",
+				es: "",
+				fr: "",
+				it: "",
+				de: ""
+			},
+			25: {
+				en: "",
+				es: "",
+				fr: "",
+				it: "",
+				de: ""
+			},
+			26: {
+				en: "",
+				es: "",
+				fr: "",
+				it: "",
+				de: ""
+			}
 		}
 		
 	}
@@ -520,8 +745,10 @@ const Pair_Event = {
 	
 	'use strict';
 	
-	document.onload = () => {
-		Pair_Event.ajax.get()
+	window.onload = () => {
+		
+		//Pair_Event.ajax.get()
+		Pair_Event.utils.headerShrink()
 	}
 	
 })();
@@ -841,29 +1068,6 @@ const Pair_Event = {
 	
 })();
 
-// Header resize on scroll
-(function () {
-	
-	'use strict';
-	let getHeader = document.getElementById('theHeader');
-	
-	window.addEventListener('scroll', () => {
-		
-		window.requestAnimationFrame(function () {
-			
-			if (getHeader.scrollTop === window.scrollY) {
-				
-				getHeader.classList.remove('slim_line_nav')
-			} else {
-				getHeader.classList.add('slim_line_nav')
-			}
-			
-			
-		})
-	})
-	
-	
-})();
 
 // Phase 1 of shopping cart
 (function () {
@@ -1169,8 +1373,8 @@ const Pair_Event = {
 				message: 'Please supply your email',
 				isSuccess: false
 			})
-		}else{
-			if(!Pair_Event.utils.isEmail(contactEmail)){
+		} else {
+			if (!Pair_Event.utils.isEmail(contactEmail)) {
 				notifierObject.push({
 					target: 'contact_form',
 					message: "Provide a valid email",
@@ -1187,9 +1391,9 @@ const Pair_Event = {
 			})
 		}
 		
-		if(notifierObject.length > 0){
+		if (notifierObject.length > 0) {
 			Pair_Event.utils.notifier(notifierObject)
-		}else{
+		} else {
 			Pair_Event.utils.notifier({
 				target: 'contact_form',
 				message: "Message sent successfully",
@@ -1200,4 +1404,65 @@ const Pair_Event = {
 		}
 	})
 	
+})();
+
+// Translator
+(function () {
+	
+	'use strict';
+	
+	let translators = document.querySelectorAll('.translator_selector');
+
+	for (let i = 0; i < translators.length; i++) {
+		translators[i].addEventListener('click', (evt) => {
+			let target = evt.target;
+			let data = target.dataset;
+			let srcHolder = translators[0].src;
+			let titleHolder = translators[0].title;
+			let transLangHolder = translators[0].dataset.transLang;
+			
+			Pair_Event.utils.translated(data.transLang, Pair_Event.holders.translations);
+			
+			translators[0].alt = translators[i].alt;
+			translators[0].title = translators[i].alt;
+			translators[0].src = translators[i].src;
+			translators[0].setAttribute('data-trans-lang', translators[i].dataset.transLang);
+			
+			translators[i].alt = titleHolder;
+			translators[i].title = titleHolder;
+			translators[i].src = srcHolder;
+			translators[i].setAttribute('data-trans-lang', transLangHolder);
+			
+			
+		})
+	}
+	
+})();
+
+// Share us Slide out
+(function (){
+
+    'use strict';
+	
+    let shareSlide = document.getElementById('shareUsSlide');
+    let shareHolder = document.querySelector('#bg_holder .shareus_wrapper');
+    let shareClicker = document.querySelectorAll('.shareUsClicker');
+	
+	shareSlide.addEventListener('mouseover', () => {
+		shareHolder.style.left = '-11px';
+		
+		console.dir(shareHolder)
+	});
+	
+	shareSlide.addEventListener('click', () => {
+		shareHolder.style.left = '-74px'
+	})
+	
+	for (let i = 0; i < shareClicker.length; i++) {
+		shareClicker[i].addEventListener('click', () => {
+			setTimeout(() => shareHolder.style.left = '-74px', 700)
+		})
+	}
+	
+
 })();
