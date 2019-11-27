@@ -189,7 +189,6 @@ const Pair_Event = {
 			return -1
 		},
 		buildCart: (itemObject) => {
-			// TODO: Build this out to deal with adding and removing items from the shopping cart
 			
 			// serverData
 			let serverData = Pair_Event.holders.orderList();
@@ -285,7 +284,6 @@ const Pair_Event = {
 							theeOptions += `<option>${s}</option>`;
 						}
 					}
-					// TODO: need to add custom images urls for available tickets
 					html += `<figure  title="Select from list to increase or decrease ticket count">
                             <figure>
                                 <img src="https://via.placeholder.com/80X60" alt="ticket advanced">
@@ -475,13 +473,21 @@ const Pair_Event = {
 			for (let i = 0; i < toTranslate.length; i++) {
 				let thisEl = toTranslate[i];
 				let theData = thisEl.dataset;
-				console.log(theData.translationId)
+	
 				let theTranslation = translations[theData.translationId][language];
-				console.log(theTranslation)
+		
 				thisEl.innerHTML = null;
 				thisEl.innerHTML = theTranslation;
-				
 			}
+		},
+		hasStudent: (theCart) => {
+			let itemList = theCart.orderItems;
+			for (let i = 0; i < itemList.length; i++) {
+				if(itemList[i].id === "4"){
+					return true;
+				}
+			}
+			return false;
 		}
 	},
 	holders: {
@@ -774,7 +780,7 @@ const Pair_Event = {
 	
 	'use strict';
 	
-	Pair_Event.storage.remove('initial_popup');
+	//Pair_Event.storage.remove('initial_popup');
 	if (Boolean(Pair_Event.storage.get('initial_popup')) !== true) {
 		setTimeout(() => {
 			document.getElementById('initial_popup').style.display = 'grid';
@@ -856,8 +862,7 @@ const Pair_Event = {
 })();
 
 // Open basket modal
-// TODO Complete the cart
-// TODO: add unique orderid for each order
+
 (function () {
 	
 	'use strict';
@@ -904,7 +909,6 @@ const Pair_Event = {
 				autoplay: false,
 				animationDuration: 2000,
 				perView: 1,
-				// startAt: 2,
 				hoverpause: false,
 				keyboard: false
 			}).mount();
@@ -916,7 +920,6 @@ const Pair_Event = {
 })();
 
 // Close basket
-// TODO: add more action for when the shopping cart close without completion
 (function () {
 	
 	'use strict';
@@ -967,31 +970,36 @@ const Pair_Event = {
 	
 })();
 
-// Scroll to email reminder
-(function () {
+// Scroll to Element
+(function (){
+
+    'use strict';
+
+    let scrollers = document.querySelectorAll('.scrollToEl');
 	
-	'use strict';
-	
-	let showHome = document.getElementById('getReminder');
-	showHome.addEventListener('click', (evt) => {
-		evt.preventDefault();
-		
-		Pair_Event.utils.scrollDown(showHome)
-	})
-	
+	for (let i = 0; i < scrollers.length; i++) {
+		scrollers[i].addEventListener('click', (evt)=>{
+			evt.preventDefault();
+			let hash = evt.target;
+			
+			Pair_Event.utils.scrollDown(hash)
+		})
+	}
+
 })();
+
 
 // Scroll to theExperts
 (function () {
-	
+
 	'use strict';
-	
+
 	let showExperts = document.getElementById('meet_the_experts_opener');
 	showExperts.addEventListener('click', (evt) => {
 		evt.preventDefault();
 		Pair_Event.utils.scrollDown(showExperts)
 	})
-	
+
 })();
 
 // Carousel
@@ -1127,6 +1135,8 @@ const Pair_Event = {
 					
 					break;
 				case '2':
+					
+					// TODO:  Add checks for college email when student tickets are in cart
 					let WhichIsChecked = document.querySelectorAll('.radio_payment_method');
 					let isChecked = '';
 					
@@ -1235,12 +1245,23 @@ const Pair_Event = {
 							isSuccess: false
 						});
 					} else {
+						let isStudent = new RegExp(/[a-zA-z_\-$%£^]{3,}@[a-zA-Z]{3,}.(ac|edu).[a-zA-Z]{2,3}/);
 						if (!Pair_Event.utils.isEmail(paymentEmail)) {
 							notifierObject.push({
 								target: "cartPersonEmailValid",
 								message: "Invalid email provided",
 								isSuccess: false
 							});
+						}
+			
+						if(Pair_Event.utils.hasStudent(thisCart)){
+							if(!isStudent.test(paymentEmail)){
+								notifierObject.push({
+									target: "cartPersonStudentEmailValid",
+									message: "Authentic student email addresses are needed to purchase some items in your cart ",
+									isSuccess: false
+								});
+							}
 						}
 					}
 					
@@ -1279,7 +1300,6 @@ const Pair_Event = {
 						let displayPurchase = document.getElementById('the_success_order');
 						let html = ``;
 						for (let i = 0; i < thisCart.orderItems.length; i++) {
-							console.log(thisCart.orderItems[i]);
 							html += `<section><figure>${thisCart.orderItems[i].title}: &nbsp;&nbsp;</figure><figure>#${thisCart.orderItems[i].quantity}</figure></section>`
 						}
 						
@@ -1412,7 +1432,7 @@ const Pair_Event = {
 	'use strict';
 	
 	let translators = document.querySelectorAll('.translator_selector');
-
+	
 	for (let i = 0; i < translators.length; i++) {
 		translators[i].addEventListener('click', (evt) => {
 			let target = evt.target;
@@ -1440,29 +1460,46 @@ const Pair_Event = {
 })();
 
 // Share us Slide out
-(function (){
-
-    'use strict';
+(function () {
 	
-    let shareSlide = document.getElementById('shareUsSlide');
-    let shareHolder = document.querySelector('#bg_holder .shareus_wrapper');
-    let shareClicker = document.querySelectorAll('.shareUsClicker');
+	'use strict';
 	
-	shareSlide.addEventListener('mouseover', () => {
-		shareHolder.style.left = '-11px';
-		
-		console.dir(shareHolder)
-	});
+	let shareSlide = document.getElementById('shareUsSlide');
+	let shareHolder = document.querySelector('#bg_holder .shareus_wrapper');
+	let shareClicker = document.querySelectorAll('.shareUsClicker');
 	
 	shareSlide.addEventListener('click', () => {
-		shareHolder.style.left = '-74px'
-	})
+		
+		if (shareHolder.style.left === "-11px") {
+			shareHolder.style.left = '-84px';
+			
+		} else {
+			shareHolder.style.left = '-11px';
+		}
+	});
 	
 	for (let i = 0; i < shareClicker.length; i++) {
 		shareClicker[i].addEventListener('click', () => {
-			setTimeout(() => shareHolder.style.left = '-74px', 700)
+			setTimeout(() => shareHolder.style.left = '-84px', 700)
 		})
 	}
 	
+	
+})();
+
+
+// Why Attend slider
+(function (){
+
+    'use strict';
+    
+	
+	let whyAttendSlider = new Glide('#whyAttendSlider',{
+		type: 'slider',
+		startAt: 0,
+		perView: 1,
+		autoplay: 7000,
+		animationDuration: 2000
+	}).mount();
 
 })();

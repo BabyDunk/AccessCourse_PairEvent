@@ -12,13 +12,13 @@
           content="technology, tech event, 5g, emerging tech, guest speaker, Rowan Hogman, Darren King, Professor Karen Cham, latest tech, belfast event">
 
     <!-- FB Share -->
-    <meta property="og:url" content="https://pairevent.babydunk.co.uk/" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Pair Event Presents: 5G The Future Connection" />
-    <meta property="og:description" content="College project to build a website around emerging technology" />
-    <meta property="og:image" content="https://pairevent.babydunk.co.uk/assets/media/smaller_logo.png" />
-    <meta property="og:image:width" content="800" />
-    <meta property="og:image:height" content="600" />
+    <meta property="og:url" content="https://pairevent.babydunk.co.uk/"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Pair Event Presents: 5G The Future Connection"/>
+    <meta property="og:description" content="College project to build a website around emerging technology"/>
+    <meta property="og:image" content="https://pairevent.babydunk.co.uk/assets/media/smaller_logo.png"/>
+    <meta property="og:image:width" content="800"/>
+    <meta property="og:image:height" content="600"/>
     <!-- FB Share -->
 
     <script type='text/javascript'
@@ -97,7 +97,7 @@
             <section id="contact_top_box">
                 <section>
                     <figure id="gMap">
-                        <img id="gMapPlaceholder" src="assets/media/locator_placeholder.png">
+                        <img id="gMapPlaceholder" src="assets/media/locator_placeholder.png" alt="A placeholder img of a satellite map of the pair event location">
                     </figure>
                 </section>
                 <section>
@@ -117,12 +117,23 @@
             <section id="contact_message_box">
                 <form>
                     <section>
-                        <label for="contact_first_name" class="translation" data-translation-id="9">First Name:</label>
-                        <input type="text" id="contact_first_name" placeholder="Enter your first name">
-                        <label for="contact_surname" class="translation" data-translation-id="10">Surname:</label>
-                        <input type="text" id="contact_surname" placeholder="Enter your surname">
-                        <label for="contact_email">Email:</label>
-                        <input type="email" id="contact_email" placeholder="Enter your email">
+                        <section class="contact_text_input">
+                            <label for="contact_first_name" class="translation" data-translation-id="9">First Name:</label>
+                            <input type="text" id="contact_first_name" placeholder="Enter your first name">
+                            <label for="contact_surname" class="translation" data-translation-id="10">Surname:</label>
+                            <input type="text" id="contact_surname" placeholder="Enter your surname">
+                            <label for="contact_email">Email:</label>
+                            <input type="email" id="contact_email" placeholder="Enter your email">
+                        </section>
+                        <fieldset>
+                            <legend>Reason For Message</legend>
+                            <label for="query_general">General Query</label>
+                            <input name="contact_query" type="radio" id="query_general" checked>
+                            <label for="query_exhibitor">Become an Exhibitor</label>
+                            <input  name="contact_query" type="radio" id="query_exhibitor">
+                            <label for="query_speaker">Become an Speaker</label>
+                            <input  name="contact_query" type="radio" id="query_speaker">
+                        </fieldset>
                     </section>
                     <section>
                         <label for="contact_textarea" class="translation" data-translation-id="11">Your Query</label>
@@ -749,7 +760,7 @@
     </figure>
 </section>
 
-<!-- Term and Conditions Modal -->
+<!-- Privacy & Cookies Modal -->
 <section class="modal" id="privacy_modal">
     <figure>
         <span class="close"><i class="far fa-times-circle"></i></span>
@@ -1009,8 +1020,8 @@
                                 <span id="success_your_order">Your Order</span>
                                 <section id="the_success_order"></section>
                                 <section>
-                                    <p>Don't forget to arrive early, that will give you better chance to meet the team
-                                        and more opportunity to get involved with the days events </p>
+                                    <p>Don't forget to arrive early, you will have a better chance to meet all the team,
+                                        plus more opportunity to get involved with the days events</p>
                                 </section>
                             </article>
                             <section class="success_rightside">
@@ -1039,10 +1050,11 @@
     <figure>
         <span class="close"><i class="far fa-times-circle"></i></span>
         <h1>5G The Future Connection</h1>
-        <section>
-            <img src="assets/media/road-animation-resized.gif"
-                 alt="Whirlwind sweeping three and four g cell service when 5g sweeps into take there place">
-
+        <section id="the_tech">
+            <section id="left_tech">This is mdummy text This is mdummy text This is mdummy text This is mdummy text This is mdummy text This is mdummy text This is mdummy text This is mdummy text This is mdummy text This is mdummy text This is mdummy text This is mdummy text This is mdummy text This is mdummy text This is mdummy text This is mdummy text This is mdummy text This is mdummy text This is mdummy text This is mdummy text </section>
+            <section id="center_tech">This is mdummy text This is mdummy text This is mdummy text This is mdummy text This is mdummy text This is mdummy text This is mdummy text This is mdummy text This is mdummy text This is mdummy text This is mdummy text This is mdummy text This is mdummy text This is mdummy text This is mdummy text This is mdummy text This is mdummy text This is mdummy text This is mdummy text This is mdummy text</section>
+            <section id="right_tech">This is mdummy text This is mdummy text This is mdummy text This is mdummy text This is mdummy text This is mdummy text This is mdummy text This is mdummy text This is mdummy text This is mdummy text This is mdummy text This is mdummy text This is mdummy text This is mdummy text This is mdummy text This is mdummy text This is mdummy text This is mdummy text This is mdummy text This is mdummy text</section>
+            <section id="bottom_tech">This is mdummy text This is mdummy text This is mdummy text This is mdummy text This is mdummy text This is mdummy text This is mdummy text This is mdummy text This is mdummy text This is mdummy text This is mdummy text This is mdummy text This is mdummy text This is mdummy text This is mdummy text This is mdummy text This is mdummy text This is mdummy text This is mdummy text This is mdummy text</section>
         </section>
     </figure>
 </section>
@@ -1051,9 +1063,59 @@
 <section class="modal" id="why_attend_modal">
     <figure>
         <span class="close"><i class="far fa-times-circle"></i></span>
-        <h1>Why Attend</h1>
-        <section>
-            <p>place some text here</p>
+        <span class="h1">Why Attend</span>
+        <section class="whyAttend_wrapper">
+            <section class="whyAttend_top">
+                <section>
+                    <h3>The most important 48 hours in technological history</h3>
+                    <p><strong>TECHNOLOGY</strong> has advanced and evolved rapidly ever since the beginning of the
+                        digital revolution, mankind is constantly tripping over itself to invent the next big piece of
+                        tech that will change the entire technological landscape as we know it but here at pair we don’t
+                        trip over ourselves while trying to chase the future, we simply sail towards it! (It’s a breeze)
+                    </p>
+                </section>
+                <section id="whyAttendSliderWrapper">
+                    <article id="whyAttendSlider">
+                        <div data-glide-el="track">
+                            <div id="whyAttendSliderInner">
+                                <img class="whyAttendImg" src="assets/media/whyattendslide/image1.jpg"
+                                     alt="Wide angle image of the auditorium full of people"
+                                     title="Wide angle image of the auditorium full of people">
+                                <img class="whyAttendImg" src="assets/media/whyattendslide/image2.jpg"
+                                     alt="Wide angle image of the auditorium full of people"
+                                     title="Wide angle image of the auditorium full of people">
+                                <img class="whyAttendImg" src="assets/media/whyattendslide/image3.jpg"
+                                     alt="Wide angle image of the auditorium full of people"
+                                     title="Wide angle image of the auditorium full of people">
+                                <img class="whyAttendImg" src="assets/media/whyattendslide/image4.jpg"
+                                     alt="Wide angle image of the auditorium full of people"
+                                     title="Wide angle image of the auditorium full of people">
+                                <img class="whyAttendImg" src="assets/media/whyattendslide/image5.jpg"
+                                     alt="Wide angle image of the auditorium full of people"
+                                     title="Wide angle image of the auditorium full of people">
+                                <img class="whyAttendImg" src="assets/media/whyattendslide/image6.jpg"
+                                     alt="Wide angle image of the auditorium full of people"
+                                     title="Wide angle image of the auditorium full of people">
+                                <img class="whyAttendImg" src="assets/media/whyattendslide/image7.jpg"
+                                     alt="Wide angle image of the auditorium full of people"
+                                     title="Wide angle image of the auditorium full of people">
+                            </div>
+                        </div>
+                    </article>
+
+                </section>
+            </section>
+            <section class="whyAttend_bottom">
+                <section><img src="assets/media/road-animation.gif"></section>
+
+                <section><p>We truly believe we are entering into an era that will define what it is to be successful in
+                    the world of technology, the time is now to make a choice because technology and time stand still
+                    for no man and we don’t just plan to change the landscape we plan a revolution not seen in this
+                    world in such a grand scale since the beginning of the digital revolution.
+
+                    Our goal and aim is to challenge your thoughts, views and notions on what technology really is and
+                    what it should do for all of us!</p></section>
+            </section>
         </section>
     </figure>
 </section>
@@ -1168,19 +1230,21 @@
     </section>
 
 
+    <div class="fixed_background"></div>
+
     <section id="dont_miss">
         <article class="titliler">
             <span class="section_title translation" data-translation-id="17">Stay In The Loop</span>
             <p class="section_preamble translation" data-translation-id="18">We can notify you of any updates or changes
-                to the itinerary</p>
         </article>
 
         <article>
             <figure class="notifier"></figure>
             <div>
                 <section>
-                    <button class="button opener translation" data-translation-id="19" data-modal-type="why_attend_modal"
-                            title="Move to the Why Attend page to learn about this exciting event" >Why Attend?
+                    <button class="button opener translation" data-translation-id="19"
+                            data-modal-type="why_attend_modal"
+                            title="Move to the Why Attend page to learn about this exciting event">Why Attend?
                     </button>
                     <input placeholder="Provide your email address" required type="email" id="get_notified_address"/>
                     <button id="get_notified" class="button translation" data-translation-id="20"
@@ -1188,7 +1252,8 @@
                         Join List
                     </button>
 
-                    <button class="button basket_opener translation" data-translation-id="21" data-modal-type="shop_baskets"
+                    <button class="button basket_opener translation" data-translation-id="21"
+                            data-modal-type="shop_baskets"
                             title="To attend just click this button and purchase a ticket, all student are free when they provide a valid academic email address">
                         How To Attend
                     </button>
@@ -1199,10 +1264,13 @@
 
     </section>
 
+    <div class="fixed_background"></div>
+
     <section id="experts">
         <article class="titliler">
             <span class="section_title translation" data-translation-id="22">Speakers</span>
-            <p class="section_preamble translation" data-translation-id="23">Industry leaders share their ideas on the future of this emerging technology
+            <p class="section_preamble translation" data-translation-id="23">Industry leaders share their ideas on the
+                future of this emerging technology
                 and show us how higher bandwidth will open up our devices to do so much more</p>
         </article>
         <section>
@@ -1294,16 +1362,74 @@
         <div class="shareus_wrapper">
             <span class="shareus" id="shareUsSlide" title="Click To Close!"><i class="fas fa-people-carry"></i> Share Us!</span>
             <div class="social_links">
-                <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fpairevent.babydunk.co.uk&t=Pair%20Event%20Presents%3A%205G%20The%20Future%20Connection" class="shareUsClicker" title="Connect on Facebook"><span><i class="fab fa-facebook-f"></i></span></a>
-                <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fpairevent.babydunk.co.uk&title=Pair%20Event%20Presents%3A%205G%20The%20Future%20Connection" class="shareUsClicker" title="Connect on LinkedIn"><span><i class="fab fa-linkedin-in"></i></span></a>
-                <a href="http://pinterest.com/pin/create/button/?url=https%3A%2F%2Fpairevent.babydunk.co.uk&media=https://pairevent.babydunk.co.uk/assets/media/smaller_logo.png&description=Pair%20Event%20Presents%3A%205G%20The%20Future%20Connection" class="shareUsClicker" title="Connect on Pinterest"> <span><i class="fab fa-pinterest-p"></i></span></a>
-                <a class="shareUsClicker" title="Connect on Instagram"> <span><i class="fab fa-instagram"></i></span></a>
-                <a href="https://twitter.com/share?url=https%3A%2F%2Fpairevent.babydunk.co.uk&text=Pair%20Event%20Presents%3A%205G%20The%20Future%20Connection" class="shareUsClicker" title="Connect on Twitter"><span><i class="fab fa-twitter"></i></span></a>
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fpairevent.babydunk.co.uk&t=Pair%20Event%20Presents%3A%205G%20The%20Future%20Connection"
+                   class="shareUsClicker" title="Connect on Facebook"><span><i class="fab fa-facebook-f"></i></span></a>
+                <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fpairevent.babydunk.co.uk&title=Pair%20Event%20Presents%3A%205G%20The%20Future%20Connection"
+                   class="shareUsClicker" title="Connect on LinkedIn"><span><i
+                        class="fab fa-linkedin-in"></i></span></a>
+                <a href="http://pinterest.com/pin/create/button/?url=https%3A%2F%2Fpairevent.babydunk.co.uk&media=https://pairevent.babydunk.co.uk/assets/media/smaller_logo.png&description=Pair%20Event%20Presents%3A%205G%20The%20Future%20Connection"
+                   class="shareUsClicker" title="Connect on Pinterest"> <span><i class="fab fa-pinterest-p"></i></span></a>
+                <a class="shareUsClicker" title="Connect on Instagram"> <span><i
+                        class="fab fa-instagram"></i></span></a>
+                <a href="https://twitter.com/share?url=https%3A%2F%2Fpairevent.babydunk.co.uk&text=Pair%20Event%20Presents%3A%205G%20The%20Future%20Connection"
+                   class="shareUsClicker" title="Connect on Twitter"><span><i class="fab fa-twitter"></i></span></a>
             </div>
         </div>
     </div>
-
+    <div id="about_us">
+        <article class="titliler">
+            <span class="section_title translation" data-translation-id="24">About Us</span>
+            <p class="section_preamble translation" data-translation-id="25">How did we get here</p>
+        </article>
+        <article>
+            <p>“PAIR” is a multinational technology company which has offices in Japan, Singapore, Hong Kong, Tokyo,
+                London, Paris and Madrid but its main headquarters are in San Francisco California. The headquarters are
+                based in San Francisco as this is where the founder of the company was born, “PAIR” was founded in 1975
+                by James Pair snr. James Pair snr established himself on the global stage within the world of technology
+                with his assistance in the ground-breaking work of cloud computing or network based computing back in
+                the 1960s, unfortunately James Pair sr passed away back 2013 leaving control of the company to his
+                eldest son James Pair jr. As of 2019 James Pair Jr is currently in the early stages of relocating the
+                company headquarters to a more business strategic location within the United States of America to aid in
+                the production, distribution and communication of the company. “PAIR” is one of the foremost leading
+                technology companies in the world which develops, manufactures, licences, supports and sells computer
+                software, consumer electronics, personal computers and related technologies, as of 2019 “PAIR” employs
+                100,00 people worldwide and is also ranked 62 in the 2018 fortune 500 rankings. The company’s core
+                values are strength through leadership, honesty, integrity, good ethics and diversity drives innovation,
+                “PAIR” is a champion company with high moral stances on diversity and equality throughout, so much so
+                that “PAIR” has won numerous business awards including the 3 awards for “ HR Champion of the year”,
+                “Outstanding employee network” and “Company of the year” at the 2018 European diversity awards. “PAIR”
+                is also a firm believer in tackling climate change and reducing it’s carbon footprint throughout the
+                globe, the company has reduced it’s carbon footprint by 25% since 2013 and hopes to continue that
+                progression by getting that figure up to 35% by 2022. “PAIR” is also no stranger to charities around the
+                world, the company has made charitable contributions and donations since 1984 when James Pair snr
+                pleasantly surprised the world when he donated 10% of the entire net income of the company that year to
+                “Band aid” and the starving children in Ethiopia, since then “PAIR” has strived to be at the forefront
+                of charity everywhere on the globe. “PAIR” has always been a pioneering technology and multimedia
+                company with giving young entrepreneurs the chance to develop next generation technology.</p>
+        </article>
+    </div>
+    <div class="fixed_background"></div>
+    
+    <section id="compTime">
+        <section>
+            <article id="compTimeBox">
+                <span>Competition....</span>
+                <section>
+                    Win An<br>&emsp;Ipad
+                </section>
+                <img src="assets/media/ipadnew.gif" alt="Flashing image of an ipad to attracted peoples attention to the competition">
+                <span class="h3"><small>To enter this competition, simply <a href="#dont_miss" class="scrollToEl">Click Here!</a> and submit your email address</small></span>
+                <span class="h3"><small>Student email addresses will receive double entry on every submission</small></span>
+            </article>
+        </section>
+        <section><!--TODO: Add a map with several tracks from bus station ,train station and city hall--></section>
+    </section>
+    
     <section id="sponsors">
+        <article class="titliler">
+            <span class="section_title translation" data-translation-id="24">Exhibitors</span>
+            <p class="section_preamble translation" data-translation-id="25">Be sure to make time to visit our exhibitors, the innovators that have all helped shape technology to what we know an love today</p>
+        </article>
         <section data-glide-el="track">
             <section>
                 <img class="sponsor_logo logo_bottom" src="assets/media/brands/dell-technologies-partner-logo-450px.png"
@@ -1329,7 +1455,6 @@
                      src="assets/media/brands/hitachi-png-gallery-of-hitachi-logo-png-2728.png"
                      alt="Sponsor logo of Hitachi">
                 <img class="sponsor_logo logo_top" src="assets/media/brands/amd.png" alt="Sponsor logo of Amd">
-
             </section>
         </section>
     </section>
@@ -1348,7 +1473,7 @@
         <figure>
             <span>Don't Miss Out</span>
             <ul>
-                <li><a href="#dont_miss" id="getReminder" target="_self">Email Reminders</a></li>
+                <li><a href="#dont_miss" class="scrollToEl" target="_self">Email Reminders</a></li>
                 <li><a href="#" data-modal-type="shop_baskets" class="basket_opener" target="_self">Order a Ticket</a>
                 </li>
 
@@ -1357,7 +1482,7 @@
         <figure>
             <span>Information</span>
             <ul>
-                <li><a href="#" data-modal-type="t&c_modal" class="opener" target="_self">T&C</a></li>
+                <li><a href="#" data-modal-type="t&c_modal" class="opener" target="_self">T &amp;C</a></li>
                 <li><a href="#" data-modal-type="privacy_modal" class="opener" target="_self">Privacy & Cookies</a></li>
             </ul>
         </figure>
