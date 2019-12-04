@@ -1,16 +1,9 @@
-// TODO: contact page
-// TODO:        needs a radio selector added to narrow down contact submission
-// TODO: Shopping cart
-// TODO:        need to do checks for student email when student tickets are purchased
 // TODO: translator
 // TODO: privacy policy
-// TODO: why attend
 // TODO: tech page
-// TODO: speaker flip cards
 // TODO: move to ajax json once the sale has been completed
 // TODO: include an email mechanism
 // TODO: add Links for the social links
-
 
 const Pair_Event = {
 	storage: {
@@ -398,13 +391,13 @@ const Pair_Event = {
 		
 		},
 		headerShrink: () => {
-			let getHeader = document.getElementById('theHeader');
+			let getHeader = document.getElementById('theBigHeader');
 			let translator = {};
 			
 			window.addEventListener('scroll', () => {
 				
 				window.requestAnimationFrame(function () {
-					translator = document.querySelectorAll('#translator_menu ul')[0];
+					translator = document.querySelector('#translator_menu ul');
 					
 					if (getHeader.scrollTop === window.scrollY) {
 						
@@ -473,9 +466,9 @@ const Pair_Event = {
 			for (let i = 0; i < toTranslate.length; i++) {
 				let thisEl = toTranslate[i];
 				let theData = thisEl.dataset;
-	
+				
 				let theTranslation = translations[theData.translationId][language];
-		
+				
 				thisEl.innerHTML = null;
 				thisEl.innerHTML = theTranslation;
 			}
@@ -483,7 +476,7 @@ const Pair_Event = {
 		hasStudent: (theCart) => {
 			let itemList = theCart.orderItems;
 			for (let i = 0; i < itemList.length; i++) {
-				if(itemList[i].id === "4"){
+				if (itemList[i].id === "4") {
 					return true;
 				}
 			}
@@ -719,20 +712,328 @@ const Pair_Event = {
 				de: "Branchenführer teilen ihre Vorstellungen über die Zukunft dieser aufstrebenden Technologie mit und zeigen uns, wie eine höhere Bandbreite unsere Geräte für weitaus mehr Möglichkeiten öffnet"
 			},
 			24: {
-				en: "",
-				es: "",
-				fr: "",
-				it: "",
-				de: ""
+				en: "Research Leader 5G Industry Collaborations, Ericsson",
+				es: "Líder de investigación 5G Industry Collaborations, Ericsson",
+				fr: "Chef de recherche des collaborations de l'industrie 5G, Ericsson",
+				it: "Responsabile della ricerca 5G Industry Collaborations, Ericsson",
+				de: "Forschungsleiter 5G Industry Collaborations, Ericsson"
 			},
 			25: {
+				en: "Rowan Högman is Research Leader and Head of 5G Industry Collaborations at Ericsson. In this capacity he is responsible for coordinating and accumulating insights from Ericsson’s more than 50 5G research industry collaborations. Mr Högman was between 2016 and 2018 Head of Ericsson’s Marketing & Communications Operations. Previous to this, Rowan Högman was Head of Strategic Marketing 2015-2016 and has held various leading roles in the communications industry the past 20 years. ",
+				es: "Rowan Högman es Líder de Investigación y Jefe de Colaboraciones de la Industria 5G en Ericsson. En esta capacidad, es responsable de coordinar y acumular conocimientos de las más de 50 colaboraciones de la industria de investigación 5G de Ericsson. Högman estuvo entre 2016 y 2018 Jefe de Operaciones de Marketing y Comunicaciones de Ericsson. Antes de esto, Rowan Högman fue Jefe de Marketing Estratégico 2015-2016 y ha desempeñado varios roles principales en la industria de las comunicaciones en los últimos 20 años.",
+				fr: "Rowan Högman est responsable de la recherche et responsable des collaborations industrielles 5G chez Ericsson. À ce titre, il est responsable de la coordination et de la collecte des informations tirées de plus de 50 collaborations du secteur de la recherche 5G d’Ericsson. M. Högman était entre 2016 et 2018 responsable des opérations marketing et communications d’Ericsson. Auparavant, Rowan Högman était responsable du marketing stratégique 2015-2016 et a occupé divers rôles de premier plan dans l'industrie des communications au cours des 20 dernières années.",
+				it: "Rowan Högman è Research Leader e Head of 5G Industry Collaborations presso Ericsson. In tale veste è responsabile del coordinamento e dell'accumulo di approfondimenti dalle oltre 50 collaborazioni del settore della ricerca 5G di Ericsson. Högman è stato tra il 2016 e il 2018 a capo delle operazioni di marketing e comunicazione di Ericsson. In precedenza, Rowan Högman era a capo del marketing strategico 2015-2016 e ha ricoperto vari ruoli di spicco nel settore delle comunicazioni negli ultimi 20 anni.",
+				de: "Rowan Högman ist Forschungsleiter und Leiter von 5G Industry Collaborations bei Ericsson. In dieser Funktion ist er verantwortlich für die Koordination und Sammlung von Erkenntnissen aus über 50 5G-Forschungskollaborationen von Ericsson. Herr Högman war von 2016 bis 2018 Leiter der Abteilung Marketing und Kommunikation von Ericsson. Zuvor war Rowan Högman Leiter Strategisches Marketing 2015-2016 und hatte in den letzten 20 Jahren verschiedene Führungspositionen in der Kommunikationsbranche inne."
+			},
+			26: {
+				en: "Professor of Digital Transformation Design",
+				es: "Profesor de Diseño de Transformación Digital",
+				fr: "Professeur de design de transformation numérique",
+				it: "Professore di Digital Transformation Design",
+				de: "Professor für Digital Transformation Design"
+			},
+			27: {
+				en: "Karen is currently Professor of Digital Transformation Design at the University of Brighton; University Lead for the research theme ‘Connected Futures’ and Academic Lead of the Digital Catapult Centre Brighton (DCCB). She is a Women in Games Ambassador and with a background in experimental electronic arts, she has 24 years' experience designing human-centred experiences of next generation digital. Her first website was in 1994, Clients have included PlayStation, Diesel, ITV, Which?, Top Shop and EY.",
+				es: "Karen es actualmente profesora de diseño de transformación digital en la Universidad de Brighton; Líder universitario para el tema de investigación \"Futuros conectados\" y Líder académico del Centro digital de catapulta Brighton (DCCB). Es embajadora de Women in Games y tiene experiencia en artes electrónicas experimentales, tiene 24 años de experiencia en el diseño de experiencias centradas en el ser humano de la próxima generación digital. Su primer sitio web fue en 1994, los clientes incluyeron PlayStation, Diesel, ITV, Which ?, Top Shop y EY.",
+				fr: "Karen est actuellement professeur de design de transformation numérique à l'Université de Brighton; Université responsable du thème de recherche «Connected Futures» et responsable académique du Digital Catapult Centre Brighton (DCCB). Elle est ambassadrice de Women in Games et possède une formation en arts électroniques expérimentaux. Elle possède 24 ans d'expérience dans la conception d'expériences centrées sur l'homme du numérique de la prochaine génération. Son premier site web était en 1994. Ses clients comprenaient PlayStation, Diesel, ITV, Which ?, Top Shop et EY.",
+				it: "Karen è attualmente professore di Digital Transformation Design all'Università di Brighton; Responsabile universitario per il tema di ricerca \"Connected Futures\" e Responsabile accademico del Digital Catapult Center di Brighton (DCCB). Ambasciatrice di Women in Games e con esperienza in arti elettroniche sperimentali, ha 24 anni di esperienza nella progettazione di esperienze incentrate sull'uomo del digitale di prossima generazione. Il suo primo sito web è stato nel 1994, i clienti hanno incluso PlayStation, Diesel, ITV, Which ?, Top Shop ed EY.",
+				de: "Karen ist derzeit Professorin für Digital Transformation Design an der University of Brighton. Universitätsleiter für das Forschungsthema „Connected Futures“ und akademischer Leiter des Digital Catapult Center Brighton (DCCB). Sie ist eine Botschafterin für Women in Games und verfügt über 24 Jahre Erfahrung in der Gestaltung menschenzentrierter Erfahrungen der nächsten digitalen Generation. Ihre erste Website war 1994. Zu ihren Kunden gehörten PlayStation, Diesel, ITV, Which ?, Top Shop und EY."
+			},
+			28: {
+				en: "AN",
+				es: "UN",
+				fr: "UN",
+				it: "un",
+				de: "EIN"
+			},
+			29: {
+				en: "Head of Business Development, Three",
+				es: "Jefe de Desarrollo de Negocios, Tres",
+				fr: "Chef du développement des affaires, Trois",
+				it: "Responsabile dello sviluppo aziendale, tre",
+				de: "Leiter Geschäftsentwicklung, drei"
+			},
+			30: {
+				en: "Darren is Head of Business Development and IOT at Three UK. He owns IOT, MVNO and wholesale commercial partnerships, and has been instrumental in driving Three’s IOT growth strategy which includes 5G and NBIOT. Prior to joining Three, Darren was General Manager of Products for BT, where he led their re-entry into the consumer mobile space. In addition to day-to-day operation of the business, Darren was responsible for BT Mobile’s ‘Digital and Mobile First’ strategy, driving BT’s highest online engagement through sales, service, and app.",
+				es: "Darren es Jefe de Desarrollo de Negocios e IOT en Three UK. Es propietario de IOT, MVNO y asociaciones comerciales mayoristas, y ha sido fundamental para impulsar la estrategia de crecimiento IOT de Three, que incluye 5G y NBIOT. Antes de unirse a Three, Darren fue Gerente General de Productos para BT, donde dirigió su reingreso al espacio móvil de consumo. Además de la operación diaria del negocio, Darren fue responsable de la estrategia \"Digital y móvil primero\" de BT Mobile, impulsando el mayor compromiso en línea de BT a través de ventas, servicio y aplicación.",
+				fr: "Darren est responsable du développement commercial et de l'IOT chez Three UK. Il est propriétaire des partenariats IOT, MVNO et des partenariats commerciaux de gros, et a joué un rôle déterminant dans la stratégie de croissance de Three, qui inclut la 5G et la NBIOT. Avant de rejoindre Three, Darren était directeur général des produits chez BT, où il dirigeait leur retour dans l’espace mobile grand public. Outre le fonctionnement quotidien de l’entreprise, Darren était responsable de la stratégie «Numérique et mobile d’abord» de BT Mobile.",
+				it: "Darren è Head of Business Development e IOT presso Three UK. Possiede IOT, MVNO e partnership commerciali all'ingrosso ed è stato determinante nel guidare la strategia di crescita IOT di Three che include 5G e NBIOT. Prima di entrare in Three, Darren è stato General Manager dei prodotti per BT, dove ha guidato il loro rientro nello spazio mobile di consumo. Oltre alla gestione quotidiana dell'attività, Darren era responsabile della strategia \"Digital and Mobile First\" di BT Mobile, guidando il più alto coinvolgimento online di BT attraverso vendite, servizi e app.",
+				de: "Darren ist Head of Business Development und IOT bei Three UK. Er besitzt IOT-, MVNO- und Großhandels-Partnerschaften und war maßgeblich an der Entwicklung der IOT-Wachstumsstrategie von Three beteiligt, zu der auch 5G und NBIOT gehören. Vor seinem Wechsel zu Three war Darren General Manager für Produkte bei BT, wo er den Wiedereinstieg in den mobilen Bereich für Endverbraucher leitete. Neben dem täglichen Geschäftsbetrieb war Darren für die Strategie „Digital and Mobile First“ von BT Mobile verantwortlich, die BTs größtes Online-Engagement durch Vertrieb, Service und App vorantreibt."
+			},
+			31: {
+				en: "<i class='fas fa-people-carry'></i> Share Us!",
+				es: "<i class='fas fa-people-carry'></i> Compartir",
+				fr: "<i class='fas fa-people-carry'></i> Partager",
+				it: "<i class='fas fa-people-carry'></i> Condividere",
+				de: "<i class='fas fa-people-carry'></i> Teilen"
+			},
+			32: {
+				en: "About Us",
+				es: "Sobre nosotros",
+				fr: "À propos de nous",
+				it: "Riguardo a noi",
+				de: "Über uns"
+			},
+			33: {
+				en: "How did we get here",
+				es: "Cómo llegamos aquí",
+				fr: "Comment est-ce qu'on est arrivés ici",
+				it: "Come siamo arrivati qui",
+				de: "Wie sind wir hierher gekommen?"
+			},
+			34: {
+				en: "PAIR is a multinational technology company with offices in Japan, Singapore, Hong Kong, Tokyo, London, Paris and Madrid, but is headquartered in San Francisco, California. Headquartered in San Francisco, where the founder of the company was born, \"PAIR\" was founded in 1975 by James Pair Snr. James Pair snr has established himself on the world stage in the world of technology with his help in the revolutionary work of cloud computing or networked computing in the 60s. Unfortunately, James Pair sr died in 2013, leaving control of the company to the eldest son James Peer Jr.",
+				es: "PAIR es una compañía de tecnología multinacional con oficinas en Japón, Singapur, Hong Kong, Tokio, Londres, París y Madrid, pero tiene su sede en San Francisco, California. Con sede en San Francisco, donde nació el fundador de la compañía, \"PAIR\" fue fundada en 1975 por James Pair Snr. James Pair snr se ha establecido en el escenario mundial del mundo de la tecnología con su ayuda en el trabajo revolucionario de la computación en la nube o la computación en red en los años 60. Desafortunadamente, James Pair sr murió en 2013, dejando el control de la compañía al hijo mayor James Peer Jr.",
+				fr: "PAIR est une société multinationale de technologie qui possède des bureaux au Japon, à Singapour, à Hong Kong, à Tokyo, à Londres, à Paris et à Madrid. Son siège est à San Francisco, en Californie. Basée à San Francisco, où le fondateur de la société est née, \"PAIR\" a été fondée en 1975 par James Pair Snr. James Pair snr s'est établi sur la scène mondiale dans le monde de la technologie avec son aide dans le travail révolutionnaire de l'informatique en nuage ou de l'informatique en réseau dans les années 60. Malheureusement, James Pair sr est décédé en 2013, laissant le contrôle de l'entreprise au fils aîné James Peer Jr.",
+				it: "PAIR è una società tecnologica multinazionale con uffici in Giappone, Singapore, Hong Kong, Tokyo, Londra, Parigi e Madrid, ma ha sede a San Francisco, in California. Con sede a San Francisco, dove è nato il fondatore dell'azienda, \"PAIR\" è stata fondata nel 1975 da James Pair Snr. James Pair snr si è affermato sulla scena mondiale nel mondo della tecnologia con il suo aiuto nel rivoluzionario lavoro di cloud computing o informatica in rete negli anni '60. Sfortunatamente, James Pair sr è morto nel 2013, lasciando il controllo dell'azienda al figlio maggiore James Peer Jr.",
+				de: "PAIR ist ein multinationales Technologieunternehmen mit Niederlassungen in Japan, Singapur, Hongkong, Tokio, London, Paris und Madrid. Der Hauptsitz befindet sich in San Francisco, Kalifornien. \"PAIR\" hat seinen Hauptsitz in San Francisco, wo der Gründer des Unternehmens geboren wurde und wurde 1975 von James Pair Snr gegründet. James Pair snr hat sich mit seiner Hilfe in der revolutionären Arbeit des Cloud Computing oder des Networked Computing in den 60er Jahren auf der Weltbühne der Technologie etabliert. Leider starb James Pair sr im Jahr 2013 und überließ die Kontrolle über das Unternehmen dem ältesten Sohn James Peer Jr."
+			},
+			35: {
+				en: "In 2019, James Pair Jr is in the early stages of moving the company's headquarters to a more strategic location in the United States of America to facilitate the company's production, distribution and communication. \"PAIR\" is one of the world's leading technology companies that develops, manufactures, licenses, supports and sells software, consumer electronics, personal computers and related technologies. As of 2019, \"PAIR\" employs 100,000 people worldwide. also ranked 62 in the 2018 fortune 500 ranking.",
+				es: "En 2019, James Pair Jr se encuentra en las primeras etapas de trasladar la sede de la compañía a una ubicación más estratégica en los Estados Unidos de América para facilitar la producción, distribución y comunicación de la compañía. \"PAIR\" es una de las compañías de tecnología líderes en el mundo que desarrolla, fabrica, licencia, respalda y vende software, electrónica de consumo, computadoras personales y tecnologías relacionadas. A partir de 2019, \"PAIR\" emplea a 100,000 personas en todo el mundo. También ocupó el puesto 62 en el ranking Fortune 500 2018.",
+				fr: "En 2019, James Pair Jr a commencé à déplacer le siège de la société vers un emplacement plus stratégique aux États-Unis d'Amérique afin de faciliter la production, la distribution et la communication de la société. \"PAIR\" est l'une des principales sociétés de technologie du monde qui développe, fabrique, concède sous licence, supporte et vend des logiciels, des produits électroniques grand public, des ordinateurs personnels et des technologies associées. En 2019, \"PAIR\" emploie 100 000 personnes dans le monde. également classé 62 dans le classement 2018 de la fortune 500.",
+				it: "Nel 2019, James Pair Jr è nelle prime fasi di trasferimento della sede centrale dell'azienda in una posizione più strategica negli Stati Uniti d'America per facilitare la produzione, la distribuzione e la comunicazione dell'azienda. \"PAIR\" è una delle aziende tecnologiche leader a livello mondiale che sviluppa, produce, concede in licenza, supporta e vende software, elettronica di consumo, personal computer e tecnologie correlate. A partire dal 2019, \"PAIR\" impiega 100.000 persone in tutto il mondo. anche classificato 62 nella classifica fortuna 500 del 2018.",
+				de: "Im Jahr 2019 befindet sich James Pair Jr. im Anfangsstadium des Umzugs des Hauptsitzes des Unternehmens an einen strategisch günstigeren Standort in den Vereinigten Staaten von Amerika, um die Produktion, den Vertrieb und die Kommunikation des Unternehmens zu vereinfachen. \"PAIR\" ist eines der weltweit führenden Technologieunternehmen, das Software, Unterhaltungselektronik, PCs und verwandte Technologien entwickelt, herstellt, lizenziert, unterstützt und vertreibt. Ab 2019 beschäftigt \"PAIR\" weltweit 100.000 Mitarbeiter. Ebenfalls auf Platz 62 im Fortune 500-Ranking 2018."
+			},
+			36: {
+				en: "The company's core values ​​are strength through leadership, honesty, integrity, good ethics and diversity as an engine of innovation the 3 \"HR Champion of the Year\" awards, \"Outstanding Employee Network\" And \"Company of the Year\" at the 2018 European Diversity Awards. \"PAIR\" is also convinced of the need to fight climate change and reduce its carbon footprint worldwide. The company has reduced its carbon footprint by 25% since 2013 and hopes to continue this growth to 35% by 2022.",
+				es: "Los valores centrales de la compañía son la fortaleza a través del liderazgo, la honestidad, la integridad, la buena ética y la diversidad como motor de innovación: los 3 premios \"HR Champion of the Year\", \"Outstanding Employee Network\" y \"Company of the Year\" en el 2018 Premios Europeos a la Diversidad. \"PAIR\" también está convencido de la necesidad de combatir el cambio climático y reducir su huella de carbono en todo el mundo. La compañía ha reducido su huella de carbono en un 25% desde 2013 y espera continuar este crecimiento hasta el 35% para 2022.",
+				fr: "Les valeurs fondamentales de la société sont la force par le leadership, l'honnêteté, l'intégrité, la bonne éthique et la diversité en tant que moteur de l'innovation: les 3 «récompenses du champion des ressources humaines de l'année», le «réseau d'employés exceptionnels» et la «société de l'année» au 2018 Prix européens de la diversité. \"PAIR\" est également convaincu de la nécessité de lutter contre le changement climatique et de réduire son empreinte carbone dans le monde entier. La société a réduit son empreinte carbone de 25% depuis 2013 et espère poursuivre cette croissance à 35% d’ici 2022.",
+				it: "I valori chiave dell'azienda sono la forza attraverso la leadership, l'onestà, l'integrità, la buona etica e la diversità come motore di innovazione, i 3 premi \"Campione delle risorse umane dell'anno\", \"Rete di dipendenti eccezionale\" e \"Azienda dell'anno\" al 2018 Premi europei sulla diversità. \"PAIR\" è anche convinto della necessità di combattere i cambiamenti climatici e ridurre la sua impronta di carbonio in tutto il mondo. La società ha ridotto la sua impronta di carbonio del 25% dal 2013 e spera di continuare questa crescita al 35% entro il 2022.",
+				de: "Die Kernwerte des Unternehmens sind Stärke durch Führung, Ehrlichkeit, Integrität, gute Ethik und Vielfalt als Motor der Innovation, die mit den 3 Auszeichnungen \"HR Champion of the Year\", \"Outstanding Employee Network\" und \"Company of the Year\" im Jahr 2018 ausgezeichnet wurden European Diversity Awards. \"PAIR\" ist auch von der Notwendigkeit überzeugt, den Klimawandel zu bekämpfen und seinen weltweiten CO2-Fußabdruck zu verringern. Das Unternehmen hat seinen CO2-Fußabdruck seit 2013 um 25% reduziert und hofft, dieses Wachstum bis 2022 auf 35% fortzusetzen."
+			},
+			37: {
+				en: "\"PAIR\" has always been a pioneer in the fields of technology and multimedia, offering young entrepreneurs the opportunity to develop next-generation technology. The most frequently asked question about \"PAIR\" is \"why pair?\", The answer is the meaning of the word \"pair\" literally means to connect and the logo of a pear symbolizes wisdom, health and inner peace.",
+				es: "\"PAIR\" siempre ha sido pionero en los campos de tecnología y multimedia, ofreciendo a los jóvenes emprendedores la oportunidad de desarrollar tecnología de próxima generación. La pregunta más frecuente sobre \"PAR\" es \"¿por qué emparejar?\". La respuesta es que el significado de la palabra \"emparejar\" significa literalmente conectar y el logotipo de una pera simboliza la sabiduría, la salud y la paz interior.",
+				fr: "\"PAIR\" a toujours été un pionnier dans les domaines de la technologie et du multimédia, offrant aux jeunes entrepreneurs la possibilité de développer une technologie de nouvelle génération. La question la plus fréquemment posée à propos de \"PAIR\" est \"pourquoi s'apparier?\", La réponse est la signification du mot \"paire\" signifie littéralement se connecter et le logo d'une poire symbolise la sagesse, la santé et la paix intérieure.",
+				it: "\"PAIR\" è sempre stato un pioniere nel campo della tecnologia e del multimedia, offrendo ai giovani imprenditori l'opportunità di sviluppare la tecnologia di prossima generazione. La domanda più frequente su \"COPPIA\" è \"perché coppia?\", La risposta è il significato della parola \"coppia\" significa letteralmente connettersi e il logo di una pera simboleggia la saggezza, la salute e la pace interiore.",
+				de: "\"PAIR\" war schon immer ein Vorreiter in den Bereichen Technologie und Multimedia und bot jungen Unternehmern die Möglichkeit, Technologien der nächsten Generation zu entwickeln. Die am häufigsten gestellte Frage zu \"PAAR\" lautet \"Warum ein Paar?\". Die Antwort lautet, dass das Wort \"Paar\" wörtlich \"verbinden\" bedeutet und das Logo einer Birne Weisheit, Gesundheit und inneren Frieden symbolisiert."
+			},
+			38: {
+				en: "Competition....",
+				es: "Competencia....",
+				fr: "Concurrence....",
+				it: "Concorrenza....",
+				de: "Wettbewerb...."
+			},
+			39: {
+				en: "WIN",
+				es: "GANAR",
+				fr: "GAGNER",
+				it: "VINCERE",
+				de: "SIEG"
+			},
+			40: {
+				en: "To enter this competition, simply <a href='#dont_miss' class='scrollToEl'>Click Here!</a> and submit your email address",
+				es: "Para participar en esta competencia, simplemente <a href='#dont_miss' class='scrollToEl'>¡Haga clic aquí!</a> y envíe su dirección de correo electrónico",
+				fr: "Pour participer à ce concours, il suffit de <a href='#dont_miss' class='scrollToEl'>Cliquez ici!</a> et soumettez votre adresse email",
+				it: "Per partecipare a questa competizione, semplicemente <a href='#dont_miss' class='scrollToEl'>Clicca qui!</a> e invia il tuo indirizzo email",
+				de: "Um an diesem Wettbewerb teilzunehmen, einfach <a href='#dont_miss' class='scrollToEl'>Klicke hier!</a> und senden Sie Ihre E-Mail-Adresse"
+			},
+			41: {
+				en: "Student email addresses will receive double entry on every submission",
+				es: "Las direcciones de correo electrónico de los estudiantes recibirán doble entrada en cada envío",
+				fr: "Les adresses électroniques des étudiants recevront une double entrée à chaque soumission.",
+				it: "Gli indirizzi email degli studenti riceveranno una doppia iscrizione per ogni invio",
+				de: "Studenten-E-Mail-Adressen erhalten bei jeder Einreichung einen doppelten Eintrag"
+			},
+			42: {
+				en: "Exhibitors",
+				es: "expositores",
+				fr: "Aussteller",
+				it: "espositori",
+				de: "Aussteller"
+			},
+			43: {
+				en: "Be sure to make time to visit our exhibitors, the innovators that have all helped shape technology to what we know an love today",
+				es: "Asegúrese de hacer tiempo para visitar a nuestros expositores, los innovadores que han ayudado a dar forma a la tecnología a lo que hoy conocemos.",
+				fr: "Assurez-vous de prendre le temps de visiter nos exposants, les innovateurs qui ont tous contribué à façonner la technologie en ce que nous connaissons aujourd'hui comme un amour",
+				it: "Assicurati di trovare il tempo di visitare i nostri espositori, gli innovatori che hanno contribuito a plasmare la tecnologia a ciò che oggi conosciamo un amore",
+				de: "Nehmen Sie sich Zeit, um unsere Aussteller zu besuchen, die Innovatoren, die alle dazu beigetragen haben, die Technologie so zu gestalten, wie wir sie heute lieben"
+			},
+			44: {
+				en: "Don't Miss Out",
+				es: "No te pierdas",
+				fr: "Ne manquez pas",
+				it: "Da non perdere",
+				de: "Nicht verpassen"
+			},
+			45: {
+				en: "Email Reminders",
+				es: "Recordatorios por correo electrónico",
+				fr: "Rappels par courriel",
+				it: "Promemoria e-mail",
+				de: "E-Mail-Erinnerungen"
+			},
+			46: {
+				en: "Order a Ticket",
+				es: "Pide un boleto",
+				fr: "Commandez un billet",
+				it: "Ordina un biglietto",
+				de: "Ticket bestellen"
+			},
+			47: {
+				en: "Information",
+				es: "Información",
+				fr: "Information",
+				it: "Informazione",
+				de: "Information"
+			},
+			48: {
+				en: "About Us",
+				es: "Sobre nosotros",
+				fr: "À propos de nous",
+				it: "Riguardo a noi",
+				de: "Über uns"
+			},
+			49: {
+				en: "<i class='far fa-square'></i>&nbsp;ABOUT US",
+				es: "<i class='far fa-square'></i>&nbsp;Sobre nosotros",
+				fr: "<i class='far fa-square'></i>&nbsp;À propos de nous",
+				it: "<i class='far fa-square'></i>&nbsp;Riguardo a noi",
+				de: "<i class='far fa-square'></i>&nbsp;Über uns"
+			},
+			50: {
+				en: "Location",
+				es: "Ubicación",
+				fr: "Emplacement",
+				it: "Posizione",
+				de: "Ort"
+			},
+			51: {
 				en: "",
 				es: "",
 				fr: "",
 				it: "",
 				de: ""
 			},
-			26: {
+			52: {
+				en: "",
+				es: "",
+				fr: "",
+				it: "",
+				de: ""
+			},
+			53: {
+				en: "",
+				es: "",
+				fr: "",
+				it: "",
+				de: ""
+			},
+			54: {
+				en: "",
+				es: "",
+				fr: "",
+				it: "",
+				de: ""
+			},
+			55: {
+				en: "",
+				es: "",
+				fr: "",
+				it: "",
+				de: ""
+			},
+			56: {
+				en: "",
+				es: "",
+				fr: "",
+				it: "",
+				de: ""
+			},
+			57: {
+				en: "",
+				es: "",
+				fr: "",
+				it: "",
+				de: ""
+			},
+			58: {
+				en: "",
+				es: "",
+				fr: "",
+				it: "",
+				de: ""
+			},
+			59: {
+				en: "",
+				es: "",
+				fr: "",
+				it: "",
+				de: ""
+			},
+			60: {
+				en: "",
+				es: "",
+				fr: "",
+				it: "",
+				de: ""
+			},
+			61: {
+				en: "",
+				es: "",
+				fr: "",
+				it: "",
+				de: ""
+			},
+			62: {
+				en: "",
+				es: "",
+				fr: "",
+				it: "",
+				de: ""
+			},
+			63: {
+				en: "",
+				es: "",
+				fr: "",
+				it: "",
+				de: ""
+			},
+			64: {
+				en: "",
+				es: "",
+				fr: "",
+				it: "",
+				de: ""
+			},
+			65: {
+				en: "",
+				es: "",
+				fr: "",
+				it: "",
+				de: ""
+			},
+			66: {
+				en: "",
+				es: "",
+				fr: "",
+				it: "",
+				de: ""
+			},
+			67: {
+				en: "",
+				es: "",
+				fr: "",
+				it: "",
+				de: ""
+			},
+			68: {
+				en: "",
+				es: "",
+				fr: "",
+				it: "",
+				de: ""
+			},
+			69: {
+				en: "",
+				es: "",
+				fr: "",
+				it: "",
+				de: ""
+			},
+			70: {
 				en: "",
 				es: "",
 				fr: "",
@@ -781,10 +1082,14 @@ const Pair_Event = {
 	'use strict';
 	
 	//Pair_Event.storage.remove('initial_popup');
-	if (Boolean(Pair_Event.storage.get('initial_popup')) !== true) {
+	let timer = new Date();
+	
+	let initialInitialize = Pair_Event.storage.get('initial_popup');
+	let timerStopper = initialInitialize + (10*60*1000);
+	if (initialInitialize !== '' && timerStopper <= timer.getTime()  ) {
 		setTimeout(() => {
 			document.getElementById('initial_popup').style.display = 'grid';
-			Pair_Event.storage.store('initial_popup', true);
+			Pair_Event.storage.store('initial_popup', timer.getTime());
 		}, 2000)
 	}
 	
@@ -947,60 +1252,36 @@ const Pair_Event = {
 	
 	'use strict';
 	
-	let showHome = document.getElementById('home');
-	showHome.addEventListener('click', (evt) => {
-		evt.preventDefault();
-		
-		Pair_Event.utils.scrollDown(showHome)
-	})
+	let showHome = document.querySelectorAll('.scroller');
+	for (let i = 0; i < showHome.length; i++) {
+		showHome[i].addEventListener('click', (evt) => {
+			evt.preventDefault();
+			
+			Pair_Event.utils.scrollDown(showHome[i])
+		})
+	}
 	
 })();
 
-// Scroll to top
+
+// Scroll to Element
 (function () {
 	
 	'use strict';
 	
-	let showHome = document.getElementById('scrollTop');
-	showHome.addEventListener('click', (evt) => {
-		evt.preventDefault();
-		
-		Pair_Event.utils.scrollDown(showHome)
-	})
-	
-})();
-
-// Scroll to Element
-(function (){
-
-    'use strict';
-
-    let scrollers = document.querySelectorAll('.scrollToEl');
+	let scrollers = document.querySelectorAll('.scrollToEl');
 	
 	for (let i = 0; i < scrollers.length; i++) {
-		scrollers[i].addEventListener('click', (evt)=>{
+		scrollers[i].addEventListener('click', (evt) => {
 			evt.preventDefault();
 			let hash = evt.target;
 			
 			Pair_Event.utils.scrollDown(hash)
 		})
 	}
-
+	
 })();
 
-
-// Scroll to theExperts
-(function () {
-
-	'use strict';
-
-	let showExperts = document.getElementById('meet_the_experts_opener');
-	showExperts.addEventListener('click', (evt) => {
-		evt.preventDefault();
-		Pair_Event.utils.scrollDown(showExperts)
-	})
-
-})();
 
 // Carousel
 (function () {
@@ -1012,8 +1293,13 @@ const Pair_Event = {
 		autoplay: 1000,
 		animationDuration: 2000,
 		perView: 6,
-		//hoverpause: false,
-		//keyboard: false
+		hoverpause: false,
+		keyboard: false,
+		breakpoints: {
+			767: {
+				perView: 4
+			}
+		}
 	}).mount()
 	
 })();
@@ -1136,7 +1422,6 @@ const Pair_Event = {
 					break;
 				case '2':
 					
-					// TODO:  Add checks for college email when student tickets are in cart
 					let WhichIsChecked = document.querySelectorAll('.radio_payment_method');
 					let isChecked = '';
 					
@@ -1253,9 +1538,9 @@ const Pair_Event = {
 								isSuccess: false
 							});
 						}
-			
-						if(Pair_Event.utils.hasStudent(thisCart)){
-							if(!isStudent.test(paymentEmail)){
+						
+						if (Pair_Event.utils.hasStudent(thisCart)) {
+							if (!isStudent.test(paymentEmail)) {
 								notifierObject.push({
 									target: "cartPersonStudentEmailValid",
 									message: "Authentic student email addresses are needed to purchase some items in your cart ",
@@ -1489,17 +1774,34 @@ const Pair_Event = {
 
 
 // Why Attend slider
-(function (){
-
-    'use strict';
-    
+(function () {
 	
-	let whyAttendSlider = new Glide('#whyAttendSlider',{
+	'use strict';
+	
+	
+	let whyAttendSlider = new Glide('#whyAttendSlider', {
 		type: 'slider',
 		startAt: 0,
 		perView: 1,
 		autoplay: 7000,
 		animationDuration: 2000
 	}).mount();
+	
+})();
 
+// Small header initialize dropdown
+(function (){
+
+    'use strict';
+
+    let smallDropper = document.getElementById('small_dropdown');
+    let needsDropped = document.getElementById('small_screen_dropdown');
+
+	smallDropper.addEventListener('click', (evt) => {
+		
+		needsDropped.classList.toggle('openIt')
+	
+	});
+
+	
 })();
