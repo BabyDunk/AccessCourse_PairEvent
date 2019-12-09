@@ -93,6 +93,7 @@ const Pair_Event = {
 			
 			function moveScroll() {
 				let to = document.scrollingElement;
+
 				let stopper = document.querySelector(el.hash).offsetTop;
 				stopper = Math.floor(stopper /= speed) * speed;
 				
@@ -260,7 +261,7 @@ const Pair_Event = {
 			
 			let html = '';
 			let pricing = 0;
-			
+		
 			if (orderIndex > 0) {
 				pricing = serverData.orderTotal;
 				
@@ -279,7 +280,7 @@ const Pair_Event = {
 					}
 					html += `<figure  title="Select from list to increase or decrease ticket count">
                             <figure>
-                                <img src="https://via.placeholder.com/80X60" alt="ticket advanced">
+                                <img src="${Pair_Event.holders.ticketImage[orderCart[x].id]}" alt="ticket advanced">
                                 <div>
                                     <h3 class="title">${orderCart[x].title}</h3>
                                     <select class="cart_ticket_count" data-itemid="${orderCart[x].id}" data-orderid="${orderID}" data-orderIndex="${orderIndex}" title="Select from list to increase or decrease ticket count">
@@ -455,7 +456,7 @@ const Pair_Event = {
 				setTimeout(() => {
 					notifiers[i].innerHTML = html;
 					setTimeout(() => {
-						notifiers[i].innerHTML = null;
+						notifiers[i].innerHTML = '';
 					}, 3000)
 				}, 1)
 			}
@@ -481,6 +482,37 @@ const Pair_Event = {
 				}
 			}
 			return false;
+		},
+		addToFontClass: () => {
+			let fontUpdater = document.querySelectorAll('.zoom_updater');
+			let ieFixer = document.querySelectorAll('.card__face--back');
+
+			for (let i = 0; i < ieFixer.length; i++) {
+				if(!ieFixer[i].classList.contains('zoomIEFixer')){
+					ieFixer[i].classList.add('zoomIEFixer')
+				}
+			}
+			
+			for (let i = 0; i < fontUpdater.length; i++) {
+				if (fontUpdater[i].classList.contains('zoomFont1')){
+					fontUpdater[i].classList.remove('zoomFont1');
+					fontUpdater[i].classList.add('zoomFont2')
+				}else if (fontUpdater[i].classList.contains('zoomFont2')){
+					fontUpdater[i].classList.remove('zoomFont2');
+					fontUpdater[i].classList.add('zoomFont3')
+				}else if (fontUpdater[i].classList.contains('zoomFont3')){
+					fontUpdater[i].classList.remove('zoomFont3');
+					fontUpdater[i].classList.add('zoomFont1')
+				}else{
+					fontUpdater[i].classList.add('zoomFont1')
+				}
+			}
+		},
+		addToBackGroundColor: () => {
+			let overlayUpdater = document.querySelectorAll('.overlay_updater');
+			for (let i = 0; i < overlayUpdater.length; i++) {
+				overlayUpdater[i].classList.toggle('overlayUpdated')
+			}
 		}
 	},
 	holders: {
@@ -901,145 +933,221 @@ const Pair_Event = {
 				de: "Ort"
 			},
 			51: {
-				en: "",
-				es: "",
-				fr: "",
-				it: "",
-				de: ""
+				en: "Accessibility <i class=\"fas fa-universal-access\"></i>",
+				es: "Accesibilidad <i class=\"fas fa-universal-access\"></i>",
+				fr: "Accessibilité <i class=\"fas fa-universal-access\"></i>",
+				it: "Accessibilità <i class=\"fas fa-universal-access\"></i>",
+				de: "Zugänglichkeit <i class=\"fas fa-universal-access\"></i>"
 			},
 			52: {
-				en: "",
-				es: "",
-				fr: "",
-				it: "",
-				de: ""
+				en: "<i class=\"fas fa-search\"></i> Toggle Text Size",
+				es: "<i class=\"fas fa-search\"></i> Cambiar el tamaño del texto",
+				fr: "<i class=\"fas fa-search\"></i> Basculer la taille du texte",
+				it: "<i class=\"fas fa-search\"></i> Attiva / disattiva dimensioni testo",
+				de: "<i class=\"fas fa-search\"></i> Textgröße umschalten"
 			},
 			53: {
-				en: "",
-				es: "",
-				fr: "",
-				it: "",
-				de: ""
+				en: "<i class=\"fas fa-eye\"></i> Colour Overlay",
+				es: "<i class=\"fas fa-eye\"></i> Superposición de color",
+				fr: "<i class=\"fas fa-eye\"></i> Superposition de couleurs",
+				it: "<i class=\"fas fa-eye\"></i> Sovrapposizione colore",
+				de: "<i class=\"fas fa-eye\"></i> Farbüberlagerung"
 			},
 			54: {
-				en: "",
-				es: "",
-				fr: "",
-				it: "",
-				de: ""
+				en: "<i class=\"far fa-closed-captioning\"></i> SubTitle",
+				es: "<i class=\"far fa-closed-captioning\"></i> Subtitular",
+				fr: "<i class=\"far fa-closed-captioning\"></i> Sous-titre",
+				it: "<i class=\"far fa-closed-captioning\"></i> Sottotitolo",
+				de: "<i class=\"far fa-closed-captioning\"></i> Untertitel"
 			},
 			55: {
-				en: "",
-				es: "",
-				fr: "",
-				it: "",
-				de: ""
+				en: "5G The Future Connection",
+				es: "5G La conexión futura",
+				fr: "5G The Future Connection",
+				it: "5G The Future Connection",
+				de: "5G Die zukünftige Verbindung"
 			},
 			56: {
-				en: "",
-				es: "",
-				fr: "",
-				it: "",
-				de: ""
+				en: "Research by Barclays shows that 5G technology could add 17.5 million to the economy by 2025.",
+				es: "La investigación realizada por Barclays muestra que la tecnología 5G podría agregar 17,5 millones a la economía para 2025",
+				fr: "Les recherches de Barclays montrent que la technologie 5G pourrait ajouter 17,5 millions à l'économie d'ici 2025",
+				it: "La ricerca di Barclays mostra che la tecnologia 5G potrebbe aggiungere 17,5 milioni all'economia entro il 2025",
+				de: "Untersuchungen von Barclays zeigen, dass die 5G-Technologie die Wirtschaft bis 2025 um 17,5 Millionen steigern könnte"
 			},
 			57: {
-				en: "",
-				es: "",
-				fr: "",
-				it: "",
-				de: ""
+				en: "All major phone networking companies in UK involved plus other giants such as Apple are now investing into the technology.",
+				es: "Todas las principales compañías de redes telefónicas en el Reino Unido involucradas, además de otros gigantes como Apple, ahora están invirtiendo en la tecnología.",
+				fr: "Toutes les principales sociétés de réseautique téléphonique du Royaume-Uni et d'autres géants comme Apple investissent désormais dans la technologie.",
+				it: "Tutte le principali società di reti telefoniche nel Regno Unito coinvolte e altri giganti come Apple stanno investendo nella tecnologia.",
+				de: "Alle großen Telefongesellschaften in Großbritannien sowie andere Giganten wie Apple investieren jetzt in die Technologie."
 			},
 			58: {
-				en: "",
-				es: "",
-				fr: "",
-				it: "",
-				de: ""
+				en: "Belfast is one of the only cities in the UK where 5G has been rolled out into however cover is limited now due it being early stages.",
+				es: "Belfast es una de las pocas ciudades en el Reino Unido donde se ha implementado 5G, sin embargo, la cobertura es limitada ahora debido a que se encuentra en sus primeras etapas.",
+				fr: "Belfast est l'une des seules villes du Royaume-Uni où la 5G a été déployée, mais la couverture est désormais limitée en raison de ses débuts.",
+				it: "Belfast è una delle uniche città del Regno Unito in cui il 5G è stato implementato, ma la copertura è ora limitata a causa delle prime fasi.",
+				de: "Belfast ist eine der wenigen Städte in Großbritannien, in denen 5G eingeführt wurde. Die Deckung ist jedoch derzeit begrenzt, da es sich um ein frühes Stadium handelt."
 			},
 			59: {
-				en: "",
-				es: "",
-				fr: "",
-				it: "",
-				de: ""
+				en: "As well as benefiting consumers 5G could also benefit businesses in big ways. Workers will be able to work remotely more easily, operate machinery from afar and be more “present” without being present, through capabilities like 4K, AR, VR and holographic calls. In turn they’ll be able to free up more time and be more productive, as less travel will be needed, and when travel is needed 5G could speed that up too, thanks to smart and automated transport.",
+				es: "Además de beneficiar a los consumidores, 5G también podría beneficiar a las empresas a lo grande. Los trabajadores podrán trabajar de forma remota con mayor facilidad, operar maquinaria desde lejos y estar más \"presentes\" sin estar presentes, a través de capacidades como 4K, AR, VR y llamadas holográficas. A su vez, podrán liberar más tiempo y ser más productivos, ya que se necesitarán menos viajes y, cuando sea necesario, 5G también podría acelerarlo, gracias al transporte inteligente y automatizado.",
+				fr: "En plus de bénéficier aux consommateurs, la 5G pourrait également bénéficier aux entreprises de manière considérable. Les travailleurs pourront travailler à distance plus facilement, utiliser des machines à distance et être plus «présents» sans être présents, grâce à des capacités telles que 4K, AR, VR et les appels holographiques. À leur tour, ils pourront gagner plus de temps et être plus productifs, car moins de déplacements seront nécessaires, et lorsque des déplacements sont nécessaires, la 5G pourrait également accélérer cela, grâce à un transport intelligent et automatisé.",
+				it: "Oltre a favorire i consumatori, il 5G potrebbe anche apportare vantaggi alle imprese in grandi modi. I lavoratori saranno in grado di lavorare in remoto più facilmente, utilizzare macchinari da lontano ed essere più \"presenti\" senza essere presenti, attraverso funzionalità come 4K, AR, VR e chiamate olografiche. A loro volta saranno in grado di liberare più tempo ed essere più produttivi, poiché saranno necessari meno viaggi e quando sarà necessario viaggiare, anche il 5G potrebbe accelerare, grazie a un trasporto intelligente e automatizzato.",
+				de: "5G kann nicht nur den Verbrauchern zugute kommen, sondern auch den Unternehmen in großem Maße zugute kommen. Dank Funktionen wie 4K, AR, VR und holografischen Anrufen können Mitarbeiter einfacher aus der Ferne arbeiten, Maschinen aus der Ferne bedienen und „präsent“ sein, ohne anwesend zu sein. Im Gegenzug können sie mehr Zeit einsparen und produktiver arbeiten, da weniger Reisen erforderlich sind. Und wenn Reisen erforderlich sind, kann 5G dank intelligenter und automatisierter Transporte auch dies beschleunigen."
 			},
 			60: {
-				en: "",
-				es: "",
-				fr: "",
-				it: "",
-				de: ""
+				en: "As noted above, 5G will enable network slicing too, which in turn will allow companies to essentially have their own private networks, tailored completely to their needs. And more jobs and processes can be automated with 5G, because it will have the speed, capacity and latency required, which will improve operational efficiency.5G could also better connect rural communities, opening more opportunities for businesses in these regions. 5G could even pave the way to whole new products and industries that aren’t viable with 4G. With all these benefits, 5G could create 22 million jobs, and lead to the production of up to $12.3 trillion (£9.3 trillion) of goods and services by 2035.",
+				es: "Como se señaló anteriormente, 5G también permitirá el corte de la red, lo que a su vez permitirá a las empresas tener esencialmente sus propias redes privadas, adaptadas completamente a sus necesidades. Y se pueden automatizar más trabajos y procesos con 5G, porque tendrá la velocidad, la capacidad y la latencia requeridas, lo que mejorará la eficiencia operativa. 5G también podría conectar mejor a las comunidades rurales, abriendo más oportunidades para las empresas en estas regiones. 5G incluso podría allanar el camino a nuevos productos e industrias que no son viables con 4G. Con todos estos beneficios, 5G podría crear 22 millones de empleos y conducir a la producción de hasta $ 12.3 billones (£ 9.3 billones) de bienes y servicios para 2035.",
+				fr: "Comme indiqué ci-dessus, la 5G permettra également le découpage de réseau, ce qui permettra aux entreprises d'avoir essentiellement leurs propres réseaux privés, entièrement adaptés à leurs besoins. Et plus de travaux et de processus peuvent être automatisés avec la 5G, car elle aura la vitesse, la capacité et la latence requises, ce qui améliorera l'efficacité opérationnelle. La 5G pourrait également mieux connecter les communautés rurales, ouvrant plus d'opportunités pour les entreprises de ces régions. La 5G pourrait même ouvrir la voie à de nouveaux produits et à de nouvelles industries qui ne sont pas viables avec la 4G. Avec tous ces avantages, la 5G pourrait créer 22 millions d'emplois et conduire à la production de 12,3 billions de dollars (9,3 billions de livres sterling) de biens et services d'ici 2035.",
+				it: "Come notato in precedenza, il 5G consentirà anche il taglio della rete, che a sua volta consentirà alle aziende di avere essenzialmente le proprie reti private, completamente su misura per le loro esigenze. E più posti di lavoro e processi possono essere automatizzati con il 5G, perché avrà la velocità, la capacità e la latenza richieste, il che migliorerà l'efficienza operativa. Il 5G potrebbe persino aprire la strada a interi nuovi prodotti e settori che non sono praticabili con il 4G. Con tutti questi benefici, il 5G potrebbe creare 22 milioni di posti di lavoro e portare alla produzione di beni e servizi fino a $ 12,3 trilioni (£ 9,3 trilioni) entro il 2035.",
+				de: "Wie bereits erwähnt, wird 5G auch Network Slicing ermöglichen, wodurch Unternehmen im Wesentlichen über ihre eigenen privaten Netzwerke verfügen können, die vollständig auf ihre Bedürfnisse zugeschnitten sind. Und mit 5G können mehr Jobs und Prozesse automatisiert werden, da es die erforderliche Geschwindigkeit, Kapazität und Latenz hat, was die betriebliche Effizienz verbessert.5G könnte auch ländliche Gemeinden besser verbinden und den Unternehmen in diesen Regionen mehr Möglichkeiten eröffnen. 5G könnte sogar den Weg für völlig neue Produkte und Branchen ebnen, die mit 4G nicht realisierbar sind. Mit all diesen Vorteilen könnte 5G 22 Millionen Arbeitsplätze schaffen und bis 2035 Waren und Dienstleistungen im Wert von bis zu 12,3 Billionen USD (9,3 Billionen GBP) produzieren."
 			},
 			61: {
-				en: "",
-				es: "",
-				fr: "",
-				it: "",
-				de: ""
+				en: "With increasing demands for larger amounts of data it's a necessity to supply this need",
+				es: "Con la creciente demanda de grandes cantidades de datos, es necesario satisfacer esta necesidad.",
+				fr: "Avec des demandes croissantes pour de plus grandes quantités de données, il est nécessaire de répondre à ce besoin",
+				it: "Con la crescente domanda di grandi quantità di dati è necessario soddisfare questa esigenza",
+				de: "Bei steigendem Bedarf an größeren Datenmengen ist es notwendig, diesen Bedarf zu decken"
 			},
 			62: {
-				en: "",
-				es: "",
-				fr: "",
-				it: "",
-				de: ""
+				en: "With latency being so high with other connection, 5G will open pathway for new technologies",
+				es: "Con una latencia tan alta con otras conexiones, 5G abrirá el camino para nuevas tecnologías",
+				fr: "Avec une latence si élevée avec d'autres connexions, la 5G ouvrira la voie à de nouvelles technologies",
+				it: "Con una latenza così elevata rispetto ad altre connessioni, il 5G aprirà la strada a nuove tecnologie",
+				de: "Da die Latenz bei anderen Verbindungen so hoch ist, wird 5G den Weg für neue Technologien ebnen"
 			},
 			63: {
-				en: "",
-				es: "",
-				fr: "",
-				it: "",
-				de: ""
+				en: "To protect against software piracy, were all software will be hosted fully in the cloud",
+				es: "Para protegerse contra la piratería de software, donde todo el software se alojará completamente en la nube",
+				fr: "Pour vous protéger contre le piratage de logiciels, tous les logiciels seront-ils entièrement hébergés dans le cloud?",
+				it: "Per proteggersi dalla pirateria del software, tutti i software saranno ospitati completamente nel cloud",
+				de: "Zum Schutz vor Softwarepiraterie wird die gesamte Software vollständig in der Cloud gehostet"
 			},
 			64: {
-				en: "",
-				es: "",
-				fr: "",
-				it: "",
-				de: ""
+				en: "With its high bandwidth, the devices we already use are crying out for this technology",
+				es: "Con su gran ancho de banda, los dispositivos que ya utilizamos están pidiendo esta tecnología.",
+				fr: "Avec sa bande passante élevée, les appareils que nous utilisons déjà réclament cette technologie",
+				it: "Con la sua elevata larghezza di banda, i dispositivi che già utilizziamo chiedono questa tecnologia",
+				de: "Die Geräte, die wir bereits einsetzen, sind mit ihrer hohen Bandbreite auf der Suche nach dieser Technologie"
 			},
 			65: {
-				en: "",
-				es: "",
-				fr: "",
-				it: "",
-				de: ""
+				en: "It is the 5th generation phone network",
+				es: "Es la red telefónica de quinta generación.",
+				fr: "C'est le réseau téléphonique de 5ème génération",
+				it: "È la rete telefonica di quinta generazione",
+				de: "Es ist das Telefonnetz der 5. Generation"
 			},
 			66: {
-				en: "",
-				es: "",
-				fr: "",
-				it: "",
-				de: ""
+				en: "Will be commercially rolled out in 2020",
+				es: "Se lanzará comercialmente en 2020",
+				fr: "Sera commercialement déployé en 2020",
+				it: "Verrà lanciato commercialmente nel 2020",
+				de: "Wird im Jahr 2020 kommerziell eingeführt"
 			},
 			67: {
-				en: "",
-				es: "",
-				fr: "",
-				it: "",
-				de: ""
+				en: "Significantly faster than the current 4G network",
+				es: "Significativamente más rápido que la red 4G actual",
+				fr: "Beaucoup plus rapide que le réseau 4G actuel",
+				it: "Significativamente più veloce dell'attuale rete 4G",
+				de: "Deutlich schneller als das aktuelle 4G-Netz"
 			},
 			68: {
-				en: "",
-				es: "",
-				fr: "",
-				it: "",
-				de: ""
+				en: "Response times with 5G is set to be 1 millisecond unlike 4G which is 50.",
+				es: "Los tiempos de respuesta con 5G se establecen en 1 milisegundo a diferencia de 4G, que es 50.",
+				fr: "Le temps de réponse avec la 5G est fixé à 1 milliseconde contrairement à la 4G qui est de 50.",
+				it: "I tempi di risposta con 5G sono impostati su 1 millisecondo a differenza di 4G che è 50.",
+				de: "Die Reaktionszeiten bei 5G sind im Gegensatz zu 4G (50) auf 1 Millisekunde eingestellt."
 			},
 			69: {
+				en: "Up to 10Gbps at end points",
+				es: "Hasta 10 Gbps en puntos finales",
+				fr: "Jusqu'à 10 Gbit / s aux points d'extrémité",
+				it: "Fino a 10 Gbps ai punti finali",
+				de: "Bis zu 10 Gbit / s an den Endpunkten"
+			},
+			70: {
+				en: "Advantages",
+				es: "Ventajas",
+				fr: "Les avantages",
+				it: "vantaggi",
+				de: "Vorteile"
+			},
+			71: {
+				en: "Response times with 5G is set to be 1 millisecond unlike 4G which is 50.",
+				es: "Los tiempos de respuesta con 5G se establecen en 1 milisegundo a diferencia de 4G, que es 50.",
+				fr: "Le temps de réponse avec la 5G est fixé à 1 milliseconde contrairement à la 4G qui est de 50.",
+				it: "I tempi di risposta con 5G sono impostati su 1 millisecondo a differenza di 4G che è 50.",
+				de: "Die Reaktionszeiten bei 5G sind im Gegensatz zu 4G (50) auf 1 Millisekunde eingestellt."
+			},
+			72: {
+				en: "Larger bandwidth, Up to 10Gbps at end points",
+				es: "Mayor ancho de banda, hasta 10 Gbps en puntos finales",
+				fr: "Bande passante plus grande, jusqu'à 10 Gbit / s aux points d'extrémité",
+				it: "Larghezza di banda maggiore, fino a 10 Gbps ai punti finali",
+				de: "Größere Bandbreite, bis zu 10 Gbit / s an den Endpunkten"
+			},
+			73: {
+				en: "Possible to provide a uniform, consistent and uninterrupted, connectivity across the world",
+				es: "Posible proporcionar una conectividad uniforme, consistente e ininterrumpida en todo el mundo",
+				fr: "Possible de fournir une connectivité uniforme, cohérente et ininterrompue à travers le monde",
+				it: "È possibile fornire una connettività uniforme, coerente e ininterrotta in tutto il mondo",
+				de: "Es ist möglich, weltweit eine einheitliche, konsistente und unterbrechungsfreie Konnektivität bereitzustellen"
+			},
+			74: {
+				en: "Technology is capable to gather all networks to a single platform",
+				es: "La tecnología es capaz de reunir todas las redes en una sola plataforma.",
+				fr: "La technologie est capable de rassembler tous les réseaux sur une seule plateforme",
+				it: "La tecnologia è in grado di riunire tutte le reti su un'unica piattaforma",
+				de: "Die Technologie ist in der Lage, alle Netzwerke auf einer einzigen Plattform zusammenzuführen"
+			},
+			75: {
+				en: "Easier manageability with previous generations",
+				es: "Facilidad de manejo con generaciones anteriores",
+				fr: "Facilité de gestion avec les générations précédentes",
+				it: "Gestibilità più semplice con le generazioni precedenti",
+				de: "Einfachere Verwaltbarkeit mit früheren Generationen"
+			},
+			76: {
+				en: "Business that are trialing 5G",
+				es: "Negocios que están probando 5G",
+				fr: "Entreprises qui testent la 5G",
+				it: "Aziende che stanno testando il 5G",
+				de: "Unternehmen, die 5G testen"
+			},
+			77: {
+				en: "Download High Definition movies in seconds rather than minutes",
+				es: "Descarga películas de alta definición en segundos en lugar de minutos",
+				fr: "Téléchargez des films haute définition en quelques secondes plutôt qu'en quelques minutes",
+				it: "Scarica i film in alta definizione in pochi secondi anziché in minuti",
+				de: "Laden Sie High Definition-Filme in Sekunden statt in Minuten herunter"
+			},
+			78: {
 				en: "",
 				es: "",
 				fr: "",
 				it: "",
 				de: ""
 			},
-			70: {
+			79: {
+				en: "",
+				es: "",
+				fr: "",
+				it: "",
+				de: ""
+			},
+			80: {
 				en: "",
 				es: "",
 				fr: "",
 				it: "",
 				de: ""
 			}
+		},
+		ticketImage: {
+			1: 'assets/media/ticket_images/platinum_ticket.png',
+			2: 'assets/media/ticket_images/enthusiast_ticket.png',
+			3: 'assets/media/ticket_images/dev_ticket.png',
+			4: 'assets/media/ticket_images/student_ticket.png',
 		}
 		
 	}
@@ -1081,12 +1189,14 @@ const Pair_Event = {
 	
 	'use strict';
 	
-	//Pair_Event.storage.remove('initial_popup');
+	 Pair_Event.storage.remove('initial_popup');
 	let timer = new Date();
 	
 	let initialInitialize = Pair_Event.storage.get('initial_popup');
-	let timerStopper = initialInitialize + (10*60*1000);
-	if (initialInitialize !== '' && timerStopper <= timer.getTime()  ) {
+
+	let timerStopper = parseInt( initialInitialize )+ (2*60*1000);
+
+	if (!initialInitialize || timer.getTime() >= timerStopper  ) {
 		setTimeout(() => {
 			document.getElementById('initial_popup').style.display = 'grid';
 			Pair_Event.storage.store('initial_popup', timer.getTime());
@@ -1107,7 +1217,13 @@ const Pair_Event = {
 		whichToOpen[x].addEventListener('click', (evt) => {
 			evt.preventDefault();
 			evt = evt.target;
-			document.getElementById(evt.dataset.modalType).style.display = 'grid'
+			let needsDropped = document.getElementById('small_screen_dropdown');
+
+			document.getElementById(evt.dataset.modalType).style.display = 'grid';
+
+			if(evt.dataset.smallMenuClicker !== undefined){
+					needsDropped.classList.toggle('openIt')
+			}
 		})
 	}
 })();
@@ -1247,7 +1363,7 @@ const Pair_Event = {
 	
 })();
 
-// Scroll to home
+// Scroll To Element
 (function () {
 	
 	'use strict';
@@ -1256,32 +1372,27 @@ const Pair_Event = {
 	for (let i = 0; i < showHome.length; i++) {
 		showHome[i].addEventListener('click', (evt) => {
 			evt.preventDefault();
-			
 			Pair_Event.utils.scrollDown(showHome[i])
 		})
 	}
 	
 })();
 
-
-// Scroll to Element
+// Scroll to about us
 (function () {
 	
 	'use strict';
 	
-	let scrollers = document.querySelectorAll('.scrollToEl');
-	
-	for (let i = 0; i < scrollers.length; i++) {
-		scrollers[i].addEventListener('click', (evt) => {
+	let showAboutUs = document.getElementById('scroller_about_us');
+
+		showAboutUs.addEventListener('click', (evt) => {
 			evt.preventDefault();
-			let hash = evt.target;
-			
-			Pair_Event.utils.scrollDown(hash)
+	
+			Pair_Event.utils.scrollDown(showAboutUs)
 		})
-	}
+	
 	
 })();
-
 
 // Carousel
 (function () {
@@ -1305,7 +1416,6 @@ const Pair_Event = {
 })();
 
 // Notification of event updates
-// TODO: Needs completed. must add email mechanism
 (function () {
 	
 	'use strict';
@@ -1362,7 +1472,6 @@ const Pair_Event = {
 	
 })();
 
-
 // Phase 1 of shopping cart
 (function () {
 	
@@ -1407,7 +1516,6 @@ const Pair_Event = {
 			
 			switch (data.phase) {
 				case '1':
-					console.log('phase 1');
 					
 					if (thisCart !== undefined && thisCart.orderItems.length > 0) {
 						moveForward()
@@ -1595,11 +1703,9 @@ const Pair_Event = {
 					
 					break;
 				case "3":
-					console.log('phase 3');
 					document.location.reload();
 					break;
 				default:
-					console.log('Phase default');
 					break;
 			}
 			
@@ -1744,6 +1850,29 @@ const Pair_Event = {
 	
 })();
 
+// Small menu Translator
+(function () {
+	"use strict";
+
+	let smallTranslator = document.querySelectorAll('.transSelections');
+	let needsDropped = document.getElementById('small_screen_dropdown');
+
+	for (let i = 0; i < smallTranslator.length; i++) {
+		smallTranslator[i].addEventListener('click', (evt) => {
+			let data = evt.target.dataset;
+
+			if(data.transLang !== undefined){
+				Pair_Event.utils.translated(data.transLang, Pair_Event.holders.translations)
+			}
+
+			if(data.smallMenuClicker !== undefined){
+				needsDropped.classList.toggle('openIt')
+			}
+		})
+	}
+
+})();
+
 // Share us Slide out
 (function () {
 	
@@ -1772,6 +1901,66 @@ const Pair_Event = {
 	
 })();
 
+// Accessibility us Slide out
+(function () {
+	
+	'use strict';
+	
+	let accessSlide = document.getElementById('accessUsSlide');
+	let accessHolder = document.querySelector('#access_holder .access_wrapper');
+	let accessClicker = document.querySelectorAll('.accessUsClicker');
+	
+	accessSlide.addEventListener('click', () => {
+		
+		if (accessHolder.style.right === "-11px") {
+			accessHolder.style.right = '-160px';
+			
+		} else {
+			accessHolder.style.right = '-11px';
+		}
+	});
+	
+	for (let i = 0; i < accessClicker.length; i++) {
+		accessClicker[i].addEventListener('click', () => {
+			setTimeout(() => accessHolder.style.right = '-160px', 700)
+		})
+	}
+	
+	
+})();
+
+// Accessibility actions
+(function () {
+	"use strict";
+
+	let accessAction = document.querySelectorAll('.accessUsClicker');
+
+	for (let i = 0; i < accessAction.length; i++) {
+
+		accessAction[i].addEventListener('click', (evt)=> {
+			let target = evt.target;
+			let data = target.dataset;
+
+			switch(data.accessType){
+				case 'zoom':
+
+					Pair_Event.utils.addToFontClass();
+
+					break;
+				case 'overlay':
+					Pair_Event.utils.addToBackGroundColor();
+					break;
+				case 'subtitles':
+
+					break;
+				default:
+					break;
+			}
+		})
+
+	}
+
+})();
 
 // Why Attend slider
 (function () {
@@ -1805,3 +1994,4 @@ const Pair_Event = {
 
 	
 })();
+

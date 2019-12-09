@@ -4,3 +4,7 @@
 /node_modules/
 /package-lock.json
 /build/
+/error/
+/favicon.ico
+/robots.txt
+/stats/

@@ -54,6 +54,8 @@
 </head>
 <body>
 <div id="Topper"></div>
+
+
 <!-- Initial Popup will display promotion and count down clock -->
 <section class="modal" id="initial_popup">
     <figure>
@@ -105,7 +107,7 @@
                         <img id="gMapPlaceholder" src="assets/media/locator_placeholder.png" alt="A placeholder img of a satellite map of the pair event location">
                     </figure>
                 </section>
-                <section>
+                <section id="contact_details">
                     <figure>
                         <span class="title translation" data-translation-id="7">Contact Us</span>
                         <figure>
@@ -167,7 +169,7 @@
     <figure>
         <span class="close"><i class="far fa-times-circle"></i></span>
 
-        <section class="contract_section">
+        <section class="contract_section overlay_updater">
             <h1>Terms &amp; Conditions</h1>
             <section>
                 <ol>
@@ -765,18 +767,7 @@
     </figure>
 </section>
 
-<!-- Privacy & Cookies Modal -->
-<section class="modal" id="privacy_modal">
-    <figure>
-        <span class="close"><i class="far fa-times-circle"></i></span>
-        <h1>Privacy &amp; Cookies</h1>
-        <section>Count down clock</section>
-        <h1>We're here</h1>
-
-    </figure>
-</section>
-
-<!-- Privacy & Cookies Modal -->
+<!-- Directions Modal -->
 <section class="modal" id="directions_modal">
     <figure>
         <span class="close"><i class="far fa-times-circle"></i></span>
@@ -1034,7 +1025,7 @@
                                 <span id="success_your_order">Your Order</span>
                                 <section id="the_success_order"></section>
                                 <section>
-                                    <p>Don't forget to arrive early, you will have a better chance to meet all the team,
+                                    <p class="zoom_updater">Don't forget to arrive early, you will have a better chance to meet all the team,
                                         plus more opportunity to get involved with the days events</p>
                                 </section>
                             </article>
@@ -1063,7 +1054,7 @@
 <section class="modal" id="tech_info_modal">
     <figure>
         <span class="close"><i class="far fa-times-circle"></i></span>
-        <section id="the_tech">
+        <section id="the_tech" class="overlay_updater">
 
             <section id="top_tech">
                 <section class="left_top">
@@ -1072,20 +1063,20 @@
                     <img src="assets/media/tech_page/globe_tech.png" alt="a globe covered with some of the devices that will benefit from 5g" title="A globe covered with some of the devices that will benefit from 5G connectivity">
                 </section>
                 <section class="center_top">
-                    <h1>5G The Future Connection</h1>
-                    <p>Research by Barclays shows that 5G technology could add 17.5 million to the economy by 2025.
+                    <h1 class="translation" data-translation-id="55">5G The Future Connection</h1>
+                    <p class="zoom_updater translation" data-translation-id="56">Research by Barclays shows that 5G technology could add 17.5 million to the economy by 2025.
                     </p>
-                    <p>
+                    <p class="zoom_updater translation" data-translation-id="57">
                         All major phone networking companies in UK involved plus other giants such as Apple are now investing into the technology.
                     </p>
 
-                    <p>
+                    <p class="zoom_updater translation" data-translation-id="58">
                         Belfast is one of the only cities in the UK where 5G has been rolled out into however cover is limited now due it being early stages.
                     </p>
-                    <p>
+                    <p class="zoom_updater translation" data-translation-id="59">
                         As well as benefiting consumers 5G could also benefit businesses in big ways. Workers will be able to work remotely more easily, operate machinery from afar and be more “present” without being present, through capabilities like 4K, AR, VR and holographic calls. In turn they’ll be able to free up more time and be more productive, as less travel will be needed, and when travel is needed 5G could speed that up too, thanks to smart and automated transport.
                     </p>
-                    <p>
+                    <p class="zoom_updater translation" data-translation-id="60">
                         As noted above, 5G will enable network slicing too, which in turn will allow companies to essentially have their own private networks, tailored completely to their needs. And more jobs and processes can be automated with 5G, because it will have the speed, capacity and latency required, which will improve operational efficiency.5G could also better connect rural communities, opening more opportunities for businesses in these regions. 5G could even pave the way to whole new products and industries that aren’t viable with 4G. With all these benefits, 5G could create 22 million jobs, and lead to the production of up to $12.3 trillion (£9.3 trillion) of goods and services by 2035.
                     </p>
 
@@ -1099,10 +1090,10 @@
                 <section class="left_mid">
                     <h4>WHY Do We Need It</h4>
                     <ul>
-                        <li>With increasing demands for larger amounts of data it's a necessity to supply this need</li>
-                        <li>With latency being so high with other connection, 5G will open pathway for new technologies</li>
-                        <li>To protect against software piracy, were all software will be hosted fully in the cloud</li>
-                        <li>With its high bandwidth, the devices we already use are crying out for this technology</li>
+                        <li class="zoom_updater translation" data-translation-id="61">With increasing demands for larger amounts of data it's a necessity to supply this need</li>
+                        <li class="zoom_updater translation" data-translation-id="62">With latency being so high with other connection, 5G will open pathway for new technologies</li>
+                        <li class="zoom_updater translation" data-translation-id="63">To protect against software piracy, were all software will be hosted fully in the cloud</li>
+                        <li class="zoom_updater translation" data-translation-id="64">With its high bandwidth, the devices we already use are crying out for this technology</li>
                     </ul>
 
                 </section>
@@ -1110,39 +1101,48 @@
 
 
                     <ul>
-                        <li> It is the 5th generation phone network
+                        <li>
+                            <span class="zoom_updater translation" data-translation-id="65">It is the 5th generation phone network</span>
                         </li>
-                        <li> Will be commercially rolled out in 2020
+                        <li>
+                            <span class="zoom_updater translation" data-translation-id="66"> Will be commercially rolled out in 2020</span>
                         </li>
-                        <li> Significantly faster than the current 4G network, such as being able to download High Definition movies in seconds rather than minutes.
+                        <li>
+                            <span class="zoom_updater translation" data-translation-id="67"> Significantly faster than the current 4G network</span>
                         </li>
-                        <li> Response times with 5G is set to be 1 millisecond unlike 4G which is 50.
+                        <li>
+                            <span class="zoom_updater translation" data-translation-id="77"> Download High Definition movies in seconds rather than minutes</span>
                         </li>
-                        <li> Up to 10Gbps at end points
+                        <li>
+                            <span class="zoom_updater translation" data-translation-id="68"> Response times with 5G is set to be 1 millisecond unlike 4G which is 50.</span>
                         </li>
+                        <li>
+                            <span class="zoom_updater translation" data-translation-id="69"> Up to 10Gbps at end points</span>
+                        </li>
+
                     </ul>
 
                 </section>
                 <section class="right_mid">
-                    <h4>Advantages</h4>
+                    <h4 class="translation" data-translation-id="70">Advantages</h4>
                     <ul>
-                        <li>Response times with 5G is set to be 1 millisecond unlike 4G which is 50. </li>
-                        <li>Larger bandwidth, Up to 10Gbps at end points </li>
-                        <li>Possible to provide a uniform, consistent and uninterrupted, connectivity across the world</li>
-                        <li>Technology is capable to gather all networks to a single platform</li>
-                        <li>Easier manageability with previous generations</li>
+                        <li class="zoom_updater translation" data-translation-id="71">Response times with 5G is set to be 1 millisecond unlike 4G which is 50. </li>
+                        <li class="zoom_updater translation" data-translation-id="72">Larger bandwidth, Up to 10Gbps at end points </li>
+                        <li class="zoom_updater translation" data-translation-id="73">Possible to provide a uniform, consistent and uninterrupted, connectivity across the world</li>
+                        <li class="zoom_updater translation" data-translation-id="74">Technology is capable to gather all networks to a single platform</li>
+                        <li class="zoom_updater translation" data-translation-id="75">Easier manageability with previous generations</li>
                     </ul>
                 </section>
             </section>
             <section id="bottom_tech">
                 <div id="business_tech">
-                    <h3>Business that are trailing 5G</h3>
+                    <h3 class=" translation" data-translation-id="76">Business that are trialing 5G</h3>
                     <div class="bus_tech_cards">
-                        <div><img src="https://via.placeholder.com/90" alt="Company logo" title="Company logo"> This is a company 1, high tech company with 5G </div>
-                        <div><img src="https://via.placeholder.com/90" alt="Uber logo" title="Uber logo"> Uber Cab trails 5G to speed up order transfers between cabs </div>
-                        <div><img src="https://via.placeholder.com/90" alt="" title=""> Uber Cab trails 5G to speed up order transfers between cabs </div>
-                        <div><img src="https://via.placeholder.com/90" alt="" title=""> Uber Cab trails 5G to speed up order transfers between cabs </div>
-                        <div><img src="https://via.placeholder.com/90" alt="" title=""> Uber Cab trails 5G to speed up order transfers between cabs </div>
+                        <div  class="zoom_updater"><img src="assets/media/trialers/bbc.png" alt="Company logo" title="Company logo"> BBC to extend rural coverage in world-first 5G trial </div>
+                        <div class="zoom_updater"><img src="assets/media/trialers/uber.png" alt="Uber logo" title="Uber logo"> Uber Cab trials 5G to speed up order transfers between cabs </div>
+                        <div class="zoom_updater"><img src="assets/media/trialers/dominos.png" alt="" title=""> Dominos plan to convert all 16500 store world wide to 5G which will lower cost and speed up order process</div>
+                        <div class="zoom_updater"><img src="assets/media/trialers/three.png" alt="" title=""> Three UK trial 5G home broadband </div>
+                        <div class="zoom_updater"><img src="assets/media/trialers/samsung.png" alt="" title="">  Samsung Bring First 5G Fixed Wireless Access Trial to Italy </div>
                     </div>
                 </div>
             </section>
@@ -1154,59 +1154,62 @@
 <section class="modal" id="why_attend_modal">
     <figure>
         <span class="close"><i class="far fa-times-circle"></i></span>
-        <span class="h1">Why Attend</span>
-        <section class="whyAttend_wrapper">
-            <section class="whyAttend_top">
-                <section>
-                    <h3>The most important 48 hours in technological history</h3>
-                    <p><strong>TECHNOLOGY</strong> has advanced and evolved rapidly ever since the beginning of the
-                        digital revolution, mankind is constantly tripping over itself to invent the next big piece of
-                        tech that will change the entire technological landscape as we know it but here at pair we don’t
-                        trip over ourselves while trying to chase the future, we simply sail towards it! (It’s a breeze)
-                    </p>
-                </section>
-                <section id="whyAttendSliderWrapper">
-                    <article id="whyAttendSlider">
-                        <div data-glide-el="track">
-                            <div id="whyAttendSliderInner">
-                                <img class="whyAttendImg" src="assets/media/whyattendslide/image1.jpg"
-                                     alt="Wide angle image of the auditorium full of people"
-                                     title="Wide angle image of the auditorium full of people">
-                                <img class="whyAttendImg" src="assets/media/whyattendslide/image2.jpg"
-                                     alt="Wide angle image of the auditorium full of people"
-                                     title="Wide angle image of the auditorium full of people">
-                                <img class="whyAttendImg" src="assets/media/whyattendslide/image3.jpg"
-                                     alt="Wide angle image of the auditorium full of people"
-                                     title="Wide angle image of the auditorium full of people">
-                                <img class="whyAttendImg" src="assets/media/whyattendslide/image4.jpg"
-                                     alt="Wide angle image of the auditorium full of people"
-                                     title="Wide angle image of the auditorium full of people">
-                                <img class="whyAttendImg" src="assets/media/whyattendslide/image5.jpg"
-                                     alt="Wide angle image of the auditorium full of people"
-                                     title="Wide angle image of the auditorium full of people">
-                                <img class="whyAttendImg" src="assets/media/whyattendslide/image6.jpg"
-                                     alt="Wide angle image of the auditorium full of people"
-                                     title="Wide angle image of the auditorium full of people">
-                                <img class="whyAttendImg" src="assets/media/whyattendslide/image7.jpg"
-                                     alt="Wide angle image of the auditorium full of people"
-                                     title="Wide angle image of the auditorium full of people">
-                            </div>
-                        </div>
-                    </article>
+        <section class="whyAttend_outter_wrap overlay_updater">
+            <span class="h1">Why Attend</span>
 
-                </section>
-            </section>
-            <section class="whyAttend_bottom">
-                <section><img src="assets/media/road-animation-resized.gif" alt="An image of 3 whirlwinds carrying 3g and 4g away, while 5g stands supreme"></section>
+           <section class="whyAttend_wrapper">
+               <section class="whyAttend_top">
+                   <section>
+                       <h3>The most important 48 hours in technological history</h3>
+                       <p class="zoom_updater"><strong>TECHNOLOGY</strong> has advanced and evolved rapidly ever since the beginning of the
+                           digital revolution, mankind is constantly tripping over itself to invent the next big piece of
+                           tech that will change the entire technological landscape as we know it but here at pair we don’t
+                           trip over ourselves while trying to chase the future, we simply sail towards it! (It’s a breeze)
+                       </p>
+                   </section>
+                   <section id="whyAttendSliderWrapper">
+                       <article id="whyAttendSlider">
+                           <div data-glide-el="track">
+                               <div id="whyAttendSliderInner">
+                                   <img class="whyAttendImg" src="assets/media/whyattendslide/image1.jpg"
+                                        alt="Wide angle image of the auditorium full of people"
+                                        title="Wide angle image of the auditorium full of people">
+                                   <img class="whyAttendImg" src="assets/media/whyattendslide/image2.jpg"
+                                        alt="Wide angle image of the auditorium full of people"
+                                        title="Wide angle image of the auditorium full of people">
+                                   <img class="whyAttendImg" src="assets/media/whyattendslide/image3.jpg"
+                                        alt="Wide angle image of the auditorium full of people"
+                                        title="Wide angle image of the auditorium full of people">
+                                   <img class="whyAttendImg" src="assets/media/whyattendslide/image4.jpg"
+                                        alt="Wide angle image of the auditorium full of people"
+                                        title="Wide angle image of the auditorium full of people">
+                                   <img class="whyAttendImg" src="assets/media/whyattendslide/image5.jpg"
+                                        alt="Wide angle image of the auditorium full of people"
+                                        title="Wide angle image of the auditorium full of people">
+                                   <img class="whyAttendImg" src="assets/media/whyattendslide/image6.jpg"
+                                        alt="Wide angle image of the auditorium full of people"
+                                        title="Wide angle image of the auditorium full of people">
+                                   <img class="whyAttendImg" src="assets/media/whyattendslide/image7.jpg"
+                                        alt="Wide angle image of the auditorium full of people"
+                                        title="Wide angle image of the auditorium full of people">
+                               </div>
+                           </div>
+                       </article>
 
-                <section><p>We truly believe we are entering into an era that will define what it is to be successful in
-                    the world of technology, the time is now to make a choice because technology and time stand still
-                    for no man and we don’t just plan to change the landscape we plan a revolution not seen in this
-                    world in such a grand scale since the beginning of the digital revolution.
+                   </section>
+               </section>
+               <section class="whyAttend_bottom">
+                   <section><img src="assets/media/road-animation-resized.gif" alt="An image of 3 whirlwinds carrying 3g and 4g away, while 5g stands supreme"></section>
 
-                    Our goal and aim is to challenge your thoughts, views and notions on what technology really is and
-                    what it should do for all of us!</p></section>
-            </section>
+                   <section><p class="zoom_updater">We truly believe we are entering into an era that will define what it is to be successful in
+                       the world of technology, the time is now to make a choice because technology and time stand still
+                       for no man and we don’t just plan to change the landscape we plan a revolution not seen in this
+                       world in such a grand scale since the beginning of the digital revolution.
+
+                       Our goal and aim is to challenge your thoughts, views and notions on what technology really is and
+                       what it should do for all of us!</p></section>
+               </section>
+           </section>
         </section>
     </figure>
 </section>
@@ -1262,10 +1265,6 @@
             <a href="#" target="_self" hreflang="en" title="Open the order form to make a purchase"><i
                     class="fas fa-shopping-basket basket_opener" data-modal-type="shop_baskets"></i></a>
         </div>
-        <section id="accessButton">
-            <span>Accessibility</span>
-            <button>Toggle Zoom</button>
-        </section>
     </nav>
 
 </header>
@@ -1285,45 +1284,68 @@
 
             <div id="translator_small_menu">
                 <ul>
-                    <li><i class="fas fa-globe-europe"></i> Translate</li>
-                    <li><img class="translator_selector"
-                             data-trans-lang="en" data-translator-selected
-                             src="assets/media/flags/flag_uk.png"
-                             alt="Translator option for English"
-                             title="Translator option for English"> English
+                    <li><span id="transSelected"><i class="fas fa-globe-europe"></i></span> Translate</li>
+                    <li>
+                        <span class="transSelections"
+                              data-trans-lang="en"
+                              data-small-menu-clicker
+                              title="Translator option for English">
+                          <img class="translator_selector"
+                               src="assets/media/flags/flag_uk.png"
+                               alt="Translator option for English"
+                          > English
+                        </span>
+
                     </li>
-                    <li><img class="translator_selector"
-                             data-trans-lang="es"
+                    <li>
+                    <span class="transSelections"
+                              data-trans-lang="es"
+                              data-small-menu-clicker
+                              title="Translator option for Spanish">
+                        <img class="translator_selector"
                              src="assets/media/flags/flag_spanish.png"
                              alt="Translator option for Spanish"
-                             title="Translator option for Spanish"> Spanish
+                         > Spanish
+                    </span>
                     </li>
-                    <li><img class="translator_selector"
-                             data-trans-lang="fr"
+                    <li>
+                         <span class="transSelections"
+                               data-trans-lang="fr"
+                               data-small-menu-clicker
+                               title="Translator option for French">
+                        <img class="translator_selector"
                              src="assets/media/flags/flag_french.png"
-                             alt="Translator option for French"
-                             title="Translator option for French"> French
+                             alt="Translator option for French"> French
+                         </span>
                     </li>
-                    <li><img class="translator_selector"
-                             data-trans-lang="it"
+                    <li>
+                        <span class="transSelections"
+                              data-trans-lang="it"
+                              data-small-menu-clicker
+                              title="Translator option for Itatian">
+                            <img class="translator_selector"
                              src="assets/media/flags/flag_italian.png"
-                             alt="Translator option for Italian"
-                             title="Translator option for Italian"> Italian
+                             alt="Translator option for Italian"> Italian
+                        </span>
                     </li>
-                    <li><img class="translator_selector"
-                             data-trans-lang="de"
+                    <li>
+                        <span class="transSelections"
+                              data-trans-lang="de"
+                              data-small-menu-clicker
+                              title="Translator option for German">
+                            <img class="translator_selector"
                              src="assets/media/flags/flag_german.png"
-                             alt="Translator option for German"
-                             title="Translator option for German"> German
+                             alt="Translator option for German"> German
+                        </span>
                     </li>
                 </ul>
             </div>
             <div>
                 <a href="#" target="_self" hreflang="en" class="opener" title="Move to the contact and locator page"
-                   data-modal-type="contact_modal"><i class="far fa-comment-dots"></i> Contact Us!</a>
+                   data-modal-type="contact_modal" data-small-menu-clicker><i class="far fa-comment-dots"></i> Contact Us!</a>
             </div>
             <div>
-                <a href="#" target="_self" hreflang="en" class="basket_opener" data-modal-type="shop_baskets" title="Open the order form to make a purchase"><i
+                <a href="#" target="_self" hreflang="en" class="basket_opener" data-modal-type="shop_baskets"  data-small-menu-clicker title="Open the order form to make a purchase"><i
                         class="fas fa-shopping-basket "></i> Place An Order</a>
             </div>
         </div>
@@ -1351,7 +1373,7 @@
             <a class="scroller" href="#experts" target="_self"><span class="top_title title translation"
                                                                                  data-translation-id="16"><i
                     class="far fa-square"></i>&nbsp;MEET THE  <br>EXPERTS</span></a> <br>
-            <a class="scroller" href="#about_us" target="_self"><span class="top_title title translation"
+            <a id="scroller_about_us" href="#about_us" target="_self"><span class="top_title title translation"
                                                                                  data-translation-id="49"><i class="far fa-square"></i>&nbsp;ABOUT US</span></a>
         </div>
         <div class="countdown">
@@ -1388,10 +1410,10 @@
 
     <div class="fixed_background"></div>
 
-    <section id="dont_miss">
+    <section id="dont_miss" class="overlay_updater">
         <article class="titliler">
             <span class="section_title translation" data-translation-id="17">Stay In The Loop</span>
-            <p class="section_preamble translation" data-translation-id="18">We can notify you of any updates or changes to itinerary, plus you'll be entered into a free competition each time you submit your email address <!--TODO: update translator-->
+            <p class="section_preamble translation zoom_updater" data-translation-id="18">We can notify you of any updates or changes to itinerary, plus you'll be entered into a free competition each time you submit your email address <!--TODO: update translator-->
         </article>
 
         <article>
@@ -1422,10 +1444,10 @@
 
     <div class="fixed_background"></div>
 
-    <section id="experts">
+    <section id="experts" class="overlay_updater">
         <article class="titliler">
             <span class="section_title translation" data-translation-id="22">Speakers</span>
-            <p class="section_preamble translation" data-translation-id="23">Industry leaders share their ideas on the
+            <p class="section_preamble translation zoom_updater" data-translation-id="23">Industry leaders share their ideas on the
                 future of this emerging technology
                 and show us how higher bandwidth will open up our devices to do so much more</p>
         </article>
@@ -1442,8 +1464,8 @@
                             </figcaption>
                         </figure>
                     </div>
-                    <div class="card__face card__face--back">
-                        <p class="translation" data-translation-id="25">Rowan Högman is Research Leader and Head of 5G Industry
+                    <div class="card__face card__face--back overlay_updater">
+                        <p class="translation zoom_updater" data-translation-id="25">Rowan Högman is Research Leader and Head of 5G Industry
                             Collaborations at Ericsson. In this capacity he is responsible for coordinating and
                             accumulating
                             insights from Ericsson’s more than 50 5G research industry collaborations. Mr Högman was
@@ -1469,8 +1491,8 @@
                             </figcaption>
                         </figure>
                     </div>
-                    <div class="card__face card__face--back">
-                        <p class="translation" data-translation-id="27">Karen is currently Professor of Digital Transformation
+                    <div class="card__face card__face--back overlay_updater">
+                        <p class="translation zoom_updater" data-translation-id="27">Karen is currently Professor of Digital Transformation
                             Design at the University of Brighton; University Lead for the research theme ‘Connected
                             Futures’
                             and Academic Lead of the Digital Catapult Centre Brighton (DCCB). She is a Women in Games
@@ -1493,8 +1515,8 @@
                                 <p class="translation" data-translation-id="29">Head of Business Development, Three</p></figcaption>
                         </figure>
                     </div>
-                    <div class="card__face card__face--back">
-                        <p class="translation" data-translation-id="30">Darren is Head of Business Development and IOT at Three UK. He owns IOT, MVNO and wholesale
+                    <div class="card__face card__face--back overlay_updater">
+                        <p class="translation zoom_updater" data-translation-id="30">Darren is Head of Business Development and IOT at Three UK. He owns IOT, MVNO and wholesale
                             commercial partnerships, and has been instrumental in driving Three’s IOT growth strategy
                             which includes 5G and NBIOT. Prior to joining Three, Darren was General Manager of Products
                             for BT, where he led their
@@ -1527,36 +1549,46 @@
             </div>
         </div>
     </div>
-    <div id="about_us">
+    <div id="access_holder">
+        <div class="access_wrapper">
+            <span class="accessus translation" data-translation-id="51" id="accessUsSlide" title="Click To Close!">Accessibility <i class="fas fa-universal-access"></i></span>
+            <div class="access_controls">
+              <span class="accessUsClicker translation" data-translation-id="52"  data-access-type="zoom" title="Toggles the font size"><i class="fas fa-search"></i> Toggle Text Size</span>
+              <span class="accessUsClicker translation" data-translation-id="53" data-access-type="overlay" title="Toggles the color overlay"><i class="fas fa-eye"></i> Colour Overlay</span>
+                <span class="accessUsClicker translation" data-translation-id="54"  data-access-type="subtitles" title="Display SubTitles for video"><i class="far fa-closed-captioning"></i> SubTitle</span>
+            </div>
+        </div>
+    </div>
+    <div id="about_us" class="overlay_updater">
         <article class="titliler">
             <span class="section_title translation" data-translation-id="32">About Us</span>
-            <p class="section_preamble translation" data-translation-id="33">How did we get here</p>
+            <p class="section_preamble translation zoom_updater" data-translation-id="33">How did we get here</p>
         </article>
         <article>
-            <p  class="translation" data-translation-id="34">
-                PAIR is a multinational technology company with offices in Japan, Singapore, Hong Kong, Tokyo, London, Paris and Madrid, but is headquartered in San Francisco, California. Headquartered in San Francisco, where the founder of the company was born, "PAIR" was founded in 1975 by James Pair Snr. James Pair snr has established himself on the world stage in the world of technology with his help in the revolutionary work of cloud computing or networked computing in the 60s. Unfortunately, James Pair sr died in 2013, leaving control of the company to the eldest son James Peer Jr.
+            <p  class="translation zoom_updater" data-translation-id="34">
+                PAIR is a multinational technology company with offices in Japan, Singapore, Hong Kong, Tokyo, London, Paris and Madrid, but is headquartered in San Francisco, California. Headquartered in San Francisco, where the founder of the company was born, "PAIR" was founded in 1975 by James Pair Snr. James Pair snr has established himself on the world stage in the world of technology with his help in the revolutionary work of cloud computing or networked computing in the 60s. Unfortunately, James Pair sr died in 2013, leaving control of the company to the eldest son James Pair Jr.
             </p>
-            <p class="translation" data-translation-id="35">
-                In 2019, James Pair Jr is in the early stages of moving the company's headquarters to a more strategic location in the United States of America to facilitate the company's production, distribution and communication. "PAIR" is one of the world's leading technology companies that develops, manufactures, licenses, supports and sells software, consumer electronics, personal computers and related technologies. As of 2019, "PAIR" employs 100,000 people worldwide. also ranked 62 in the 2018 fortune 500 ranking.
+            <p class="translation zoom_updater" data-translation-id="35">
+                In 2019, James Pair Jr is in the early stages of moving the company's headquarters to a more strategic location in the United States of America to facilitate the company's production, distribution and communication. "PAIR" is one of the world's leading technology companies that develops, manufactures, licenses, supports and sells software, consumer electronics, personal computers and related technologies. As of 2019, "PAIR" employs 100,000 people worldwide also ranked 62 in the 2018 fortune 500 ranking.
             </p>
-            <p class="translation" data-translation-id="36">
+            <p class="translation zoom_updater" data-translation-id="36">
                 The company's core values ​​are strength through leadership, honesty, integrity, good ethics and diversity as an engine of innovation the 3 "HR Champion of the Year" awards, "Outstanding Employee Network" And "Company of the Year" at the 2018 European Diversity Awards. "PAIR" is also convinced of the need to fight climate change and reduce its carbon footprint worldwide. The company has reduced its carbon footprint by 25% since 2013 and hopes to continue this growth to 35% by 2022.
             </p>
-            <p class="translation" data-translation-id="37">
-                "PAIR" has always been a pioneer in the fields of technology and multimedia, offering young entrepreneurs the opportunity to develop next-generation technology. The most frequently asked question about "PAIR" is "why pair?", The answer is the meaning of the word "pair" literally means to connect and the logo of a pear symbolizes wisdom, health and inner peace.
+            <p class="translation zoom_updater" data-translation-id="37">
+                "PAIR" has always been a pioneer in the fields of technology and multimedia, offering young entrepreneurs the opportunity to develop next-generation technology. The most frequently asked question about "PAIR" is "why pair?", The answer is the meaning of the word pair literally means to connect and the logo of a pear symbolizes wisdom, health and inner peace.
             </p>
         </article>
     </div>
     <div class="fixed_background"></div>
     
-    <section id="compTime">
+    <section id="compTime" class="overlay_updater">
         <section>
             <article id="compTimeBox">
                 <span class="translation" data-translation-id="38">Competition....</span>
                 <section>
                     <span class="win translation" data-translation-id="39">WIN</span><span class="an translation" data-translation-id="28">AN</span><span class="ipad">IPAD</span>
                 </section>
-                <span class="h3"><small class="translation" data-translation-id="40">To enter this competition, simply <a href="#dont_miss" class="scrollToEl">Click Here!</a> and submit your email address</small></span>
+                <span class="h3"><small class="translation" data-translation-id="40">To enter this competition, simply <a href="#dont_miss" class="scroller">Click Here!</a> and submit your email address</small></span>
                 <span class="h3"><small class="translation" data-translation-id="41">Student email addresses will receive double entry on every submission</small></span>
             </article>
             <img src="assets/media/ipadnew.gif" alt="Flashing image of an ipad to attracted peoples attention to the competition">
@@ -1565,7 +1597,7 @@
         <section><img title="Click me to get a larger image" src="assets/media/map_route_image.jpg" alt="Image of a map giving direction to the event location" data-modal-type="directions_modal" class="opener"> </section>
     </section>
     
-    <section id="sponsors">
+    <section id="sponsors" class="overlay_updater">
         <article class="titliler">
             <span class="section_title translation" data-translation-id="42">Exhibitors</span>
             <p class="section_preamble translation" data-translation-id="43">Be sure to make time to visit our exhibitors, the innovators that have all helped shape technology to what we know an love today</p>
@@ -1613,7 +1645,7 @@
         <figure>
             <span class="translation" data-translation-id="44">Don't Miss Out</span>
             <ul>
-                <li><a href="#dont_miss" class="scrollToEl translation" data-translation-id="45" target="_self">Email Reminders</a></li>
+                <li><a href="#dont_miss" class="scroller translation" data-translation-id="45" target="_self">Email Reminders</a></li>
                 <li><a href="#" data-modal-type="shop_baskets" class="basket_opener translation" data-translation-id="46" target="_self">Order a Ticket</a>
                 </li>
 
@@ -1623,7 +1655,7 @@
             <span class="translation" data-translation-id="47">Information</span>
             <ul>
                 <li><a href="#" data-modal-type="t&c_modal" class="opener" target="_self">T&amp;C</a></li>
-                <li><a href="#about_us"  class="scrollToEl translation" data-translation-id="48" target="_self">About Us</a></li>
+                <li><a href="#about_us"  class="scroller translation" data-translation-id="48" target="_self">About Us</a></li>
             </ul>
         </figure>
         <figure>
