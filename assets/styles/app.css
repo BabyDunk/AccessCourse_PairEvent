@@ -40,7 +40,7 @@ body {
 }
 
 .fixed_background {
-    background-image: url(../media/tech_background.png);
+    background-image: url(../media/images/tech_background.png);
     background-repeat: no-repeat;
     background-attachment: fixed;
     height: 200px;
@@ -1713,7 +1713,7 @@ article.titliler:first-child .section_preamble {
 section#video_promo {
     display: grid;
     justify-content: center;
-    background-image: url(../media/tech_background.png);
+    background-image: url(../media/images/tech_background.png);
     background-repeat: no-repeat;
     background-attachment: fixed;
     transition: ease 3s;
