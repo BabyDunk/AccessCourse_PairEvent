@@ -44,7 +44,7 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     height: 200px;
-    box-shadow: 1px 1px 2px #444, -1px -1px 2px #444;
+    /*box-shadow: 1px 1px 2px #444, -1px -1px 2px #444;*/
 }
 
 #bg_holder {
@@ -420,6 +420,7 @@ main {
     right: 10px;
     top: 10px;
     z-index: 999;
+    cursor: default;
 }
 
 .modal figure .close:hover {
@@ -1488,7 +1489,6 @@ section#contact_message_box .notifier {
     grid-template-columns: 1fr;
     grid-row-gap: 50px;
     overflow-y: scroll;
-    height: 100%;
     background: linear-gradient(90deg, #e2edff, #f1ffea);
 }
 
@@ -1707,6 +1707,26 @@ article.titliler:first-child .section_preamble {
     text-align: center;
     font-size: 2em;
     max-width: 1200px;
+}
+
+
+section#video_promo {
+    display: grid;
+    justify-content: center;
+    background-image: url(../media/tech_background.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    transition: ease 3s;
+}
+
+section#video_promo video {
+    max-width: 1280px;
+    width:100%;
+    opacity: 1;
+}
+
+.videoSwitch {
+    opacity: 0.6!important;
 }
 
 #experts section {
@@ -2047,6 +2067,7 @@ footer section figure ul li a {
 
     #top_links {
         top: 300px;
+        right:80px
     }
 
     .top_title {

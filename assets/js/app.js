@@ -252,7 +252,7 @@ const Pair_Event = {
 			Pair_Event.holders.orderList(serverData);
 			
 			Pair_Event.utils.outputCartItem(itemObject.orderid, (serverData.pair_event_orders.length - 1));
-			Pair_Event.ajax.put(serverData)
+			
 		},
 		outputCartItem: (orderID, orderIndex) => {
 			
@@ -513,6 +513,27 @@ const Pair_Event = {
 			for (let i = 0; i < overlayUpdater.length; i++) {
 				overlayUpdater[i].classList.toggle('overlayUpdated')
 			}
+		},
+		toggleSubTitles: () => {
+			
+			let promoVid = document.querySelector('#video_promo video ');
+			let promoVidSource = document.querySelector('#video_promo video source');
+			let streamPosition = promoVid.currentTime;
+			let firstLoc = document.location.origin + '/assets/media/video/withoutSubs4.mp4';
+			let SecondLoc = document.location.origin + '/assets/media/video/withSubs4.mp4';
+
+			
+			if (promoVidSource.src === firstLoc){
+				promoVidSource.src = SecondLoc;
+			}else if (promoVidSource.src === SecondLoc){
+				promoVidSource.src = firstLoc;
+			}else{
+				promoVidSource.src = firstLoc
+			}
+			
+			promoVid.load();
+			promoVid.currentTime = streamPosition;
+			promoVid.play();
 		}
 	},
 	holders: {
@@ -1189,7 +1210,7 @@ const Pair_Event = {
 	
 	'use strict';
 	
-	 Pair_Event.storage.remove('initial_popup');
+	// Pair_Event.storage.remove('initial_popup');
 	let timer = new Date();
 	
 	let initialInitialize = Pair_Event.storage.get('initial_popup');
@@ -1283,7 +1304,6 @@ const Pair_Event = {
 })();
 
 // Open basket modal
-
 (function () {
 	
 	'use strict';
@@ -1294,14 +1314,10 @@ const Pair_Event = {
 		
 		
 		open_Cart[i].addEventListener('click', (evt) => {
-			//Pair_Event.ajax.put(Pair_Event.holders.jsonApi());
 			evt = evt.target;
 			
-			// TODO: this is temporary. once cart is built move all get
-			//  request to local property and update json server on order completion
 			Pair_Event.ajax.__ajax('GET').then((resolved) => {
 				
-				//let resolved = Pair_Event.holders.orderList();
 				Pair_Event.holders.orderList(resolved);
 				let addOrderID = document.querySelectorAll('.add_order_number');
 				if (resolved.pair_event_orders.length > 0) {
@@ -1703,6 +1719,8 @@ const Pair_Event = {
 					
 					break;
 				case "3":
+					
+					Pair_Event.ajax.put(Pair_Event.holders.orderList());
 					document.location.reload();
 					break;
 				default:
@@ -1951,7 +1969,7 @@ const Pair_Event = {
 					Pair_Event.utils.addToBackGroundColor();
 					break;
 				case 'subtitles':
-
+					Pair_Event.utils.toggleSubTitles();
 					break;
 				default:
 					break;
@@ -1993,5 +2011,24 @@ const Pair_Event = {
 	});
 
 	
+})();
+
+// auto play promo video
+(function (){
+
+    'use strict';
+
+    let promoVidLoc = document.getElementById('video_promo');
+    let promoVid = document.querySelector('#video_promo video');
+	
+	window.addEventListener('scroll', (evt) => {
+	
+		if(window.scrollY >= (promoVidLoc.offsetTop-150)
+		   && window.scrollY <= (promoVidLoc.offsetTop + promoVidLoc.offsetHeight)){
+			promoVid.play()
+		}else{
+			promoVid.pause()
+		}
+	})
 })();
 
